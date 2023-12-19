@@ -1,30 +1,22 @@
-﻿using System;
+﻿using StudentInternshipManagement.Models.Entities;
+using StudentInternshipManagement.Services.Implements;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using Unity;
 
 namespace StudentInternshipManagement.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        
         public ActionResult Index()
         {
-            return View();
-        }
+            //_service = UnityConfig.Container.Resolve<INewsService>();
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            List<News> products = UnityConfig.Container.Resolve<INewsService>().GetAll().ToList();
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(products);
         }
     }
 }

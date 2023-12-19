@@ -22,6 +22,7 @@ namespace StudentInternshipManagement.Services.Implements
     {
         public SemesterService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
+            
         }
 
         public Semester GetLatest()

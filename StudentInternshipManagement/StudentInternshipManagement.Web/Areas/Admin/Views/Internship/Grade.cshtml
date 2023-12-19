@@ -1,0 +1,17 @@
+﻿@using Kendo.Mvc.UI
+@using StudentInternshipManagement.Services.ViewModel
+@{
+    ViewBag.Title = "Kết quả thực tập";
+    ViewBag.Category = "Quản lý";
+    ViewBag.Section = "Kết quả thực tập";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Kendo
+{
+    @Styles.Render("~/Content/kendo/styles")
+    @Scripts.Render("~/Scripts/kendo/scripts")
+}
+
+<h2>Grade</h2>
+

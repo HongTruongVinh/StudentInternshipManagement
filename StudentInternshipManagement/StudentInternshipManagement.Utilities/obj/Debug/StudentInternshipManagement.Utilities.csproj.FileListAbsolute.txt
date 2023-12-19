@@ -1,10 +1,18 @@
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.dll.config
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.AssemblyReference.cache
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CoreCompileInputs.cache
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\log4net.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\log4net.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CopyComplete
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.pdb
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\bin\Debug\log4net.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\bin\Debug\log4net.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.AssemblyReference.cache
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CoreCompileInputs.cache
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CopyComplete
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\bin\Debug\log4net.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\bin\Debug\log4net.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.AssemblyReference.cache
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CopyComplete
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.pdb

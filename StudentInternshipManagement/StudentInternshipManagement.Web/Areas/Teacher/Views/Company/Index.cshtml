@@ -1,0 +1,67 @@
+﻿@using Kendo.Mvc.UI
+@using StudentInternshipManagement.Models.Entities
+@using StudentInternshipManagement.Services.ViewModel
+
+@{
+    ViewBag.Title = "Xem danh sách công ty";
+    ViewBag.Category = "Xem danh sách công ty";
+    ViewBag.Section = "Công ty";
+    Layout = "~/Areas/Teacher/Views/Shared/_Layout.cshtml";
+}
+
+@section Kendo
+{
+    @Styles.Render("~/Content/kendo/styles")
+    @Scripts.Render("~/Scripts/kendo/scripts")
+}
+
+
+@(Html.Kendo().Grid<Company>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Id).Hidden(true);
+          columns.Bound(c => c.CompanyName);
+          columns.Bound(c => c.CompanyDescription);
+          columns.Bound(c => c.Address);
+          columns.Bound(c => c.Email);
+          columns.Bound(c => c.Phone);
+      })
+      .Pageable()
+      .Sortable(sortable => { sortable.SortMode(GridSortMode.SingleColumn); })
+      .Filterable(filterable => filterable.Mode(GridFilterMode.Row))
+      .Scrollable(scr => scr.Height(310))
+      .ClientDetailTemplateId("template")
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Companies_Read", "Company"))
+      )
+      )
+
+<script id="template" type="text/kendo-tmpl">
+    @(Html.Kendo().Grid<CompanyTrainingMajorViewModel>()
+          .Name("grid_#=Id#") // Truyền Id của company vào đây để đặt tên cho grid
+          .Columns(columns =>
+          {
+              columns.Bound(p => p.TrainingMajorName);
+              columns.Bound(p => p.TotalTraineeCount);
+              columns.Bound(p => p.AvailableTraineeCount);
+          })
+          .DataSource(dataSource => dataSource
+              .Ajax()
+              .PageSize(10)
+              .Model(model =>
+              {
+                  model.Id(p => p.CompanyId);
+                  model.Id(p => p.TrainingMajorId);
+              })
+              .Read(read => read.Action("CompanyTrainingMajors_Read", "Company", new {companyId = "#=Id#" })) //Truyền Id của company vào đây để gửi tham số lên server
+
+          )
+          .Pageable()
+          .Sortable()
+          .ToClientTemplate())
+</script>
+
+

@@ -1,0 +1,21 @@
+﻿@using Kendo.Mvc.UI
+
+@(Html.Kendo().ComboBoxFor(m => m)
+      .Filter("contains")
+      .Placeholder("Chọn Định hướng")
+      .Suggest(true)
+      .DataValueField("TrainingMajorId")
+      .DataTextField("TrainingMajorName")
+      .DataSource(source =>
+      {
+          source.Read(read =>
+          {
+              read.Action("GetTrainingMajorList", "LearningClass")
+                  .Data("filterClass");
+          })
+              .ServerFiltering(true);
+      })
+      .Enable(false)
+      .AutoBind(false)
+      .CascadeFrom("ClassId")
+      )

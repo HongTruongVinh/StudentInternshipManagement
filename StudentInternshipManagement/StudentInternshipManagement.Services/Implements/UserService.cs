@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -49,6 +50,17 @@ namespace StudentInternshipManagement.Services.Implements
         private readonly ApplicationSignInManager _signInManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ApplicationUserManager _userManager;
+
+        //public UserService(IUnitOfWork unitOfWork, ApplicationUserManager userManager,
+        //    ApplicationSignInManager signInManager, IAuthenticationManager authenticationManager,
+        //    IEmailService emailService)
+        //{
+        //    _unitOfWork = unitOfWork;
+        //    _userManager = userManager;
+        //    _signInManager = signInManager;
+        //    _authenticationManager = authenticationManager;
+        //    _emailService = emailService;
+        //}
 
         public UserService(IUnitOfWork unitOfWork, ApplicationUserManager userManager,
             ApplicationSignInManager signInManager, IAuthenticationManager authenticationManager,
@@ -163,8 +175,9 @@ namespace StudentInternshipManagement.Services.Implements
         public async Task<SignInStatus> LogInAsync(LoginViewModel model)
         {
             ApplicationUser user = await _userManager.FindByEmailAsync(model.Email);
-            SignInStatus result =
-                await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false);
+
+            SignInStatus result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false); ;
+
             return result;
         }
 

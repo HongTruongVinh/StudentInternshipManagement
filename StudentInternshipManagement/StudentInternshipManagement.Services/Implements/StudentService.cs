@@ -55,6 +55,7 @@ namespace StudentInternshipManagement.Services.Implements
             int semesterId = _semesterService.GetLatest().Id;
             return GetLearningClassList(studentId).Where(c => c.SemesterId == semesterId);
         }
+
     }
 
     #endregion

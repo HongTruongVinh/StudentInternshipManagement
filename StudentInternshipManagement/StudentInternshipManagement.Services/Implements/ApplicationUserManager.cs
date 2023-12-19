@@ -39,4 +39,36 @@ namespace StudentInternshipManagement.Services.Implements
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
         }
     }
+
+    //public class ApplicationUserManager : UserManager<ApplicationUser>
+    //{
+    //    public ApplicationUserManager(IUserStore<ApplicationUser> store, IRepository repo)
+    //    : base(store)
+    //    {
+    //        this.r = repo;
+    //        // put your other configuration here instead of putting in 
+    //        // static ApplicationUserManagerCreate() method.
+    //        this.UserValidator = new UserValidator<ApplicationUser>(this)
+    //        {
+    //            AllowOnlyAlphanumericUserNames = false,
+    //            RequireUniqueEmail = true
+    //        };
+    //        // Configure validation logic for passwords
+    //        this.PasswordValidator = new PasswordValidator
+    //        {
+    //            RequiredLength = 6,
+    //            RequireNonLetterOrDigit = true,
+    //            RequireDigit = true,
+    //            RequireLowercase = true,
+    //            RequireUppercase = true,
+    //        };
+
+    //        // Configure user lockout defaults
+    //        this.UserLockoutEnabledByDefault = true;
+    //        this.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    //        this.MaxFailedAccessAttemptsBeforeLockout = 5;
+
+    //        // and your other configurations
+    //    }
+    //}
 }

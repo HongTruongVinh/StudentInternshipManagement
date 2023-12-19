@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using StudentInternshipManagement.Models.Constants;
+using StudentInternshipManagement.Models.Contexts;
 using StudentInternshipManagement.Models.Entities;
 using StudentInternshipManagement.Utilities;
 
@@ -41,6 +42,14 @@ namespace StudentInternshipManagement.Repositories.Implements
 
     public class UserRepository : IUserRepository
     {
+        #region Fields
+
+        private readonly DbContext _context;//DbContext
+        private IDbSet<ApplicationUser> _entities;
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        #endregion
+
         #region Ctor
 
         public UserRepository(DbContext context, UserManager<ApplicationUser> userManager)
@@ -63,14 +72,6 @@ namespace StudentInternshipManagement.Repositories.Implements
                            Environment.NewLine;
             return msg;
         }
-
-        #endregion
-
-        #region Fields
-
-        private readonly DbContext _context;
-        private IDbSet<ApplicationUser> _entities;
-        private readonly UserManager<ApplicationUser> _userManager;
 
         #endregion
 

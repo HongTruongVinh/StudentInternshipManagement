@@ -7,6 +7,7 @@ using System.Web.Script.Serialization;
 
 namespace StudentInternshipManagement.Models.Entities
 {
+    
     public class Student : BaseEntity
     {
         [Required]
@@ -19,6 +20,9 @@ namespace StudentInternshipManagement.Models.Entities
         [DisplayName("Chương trình đào tạo")]
         public string Program { get; set; }
 
+        /// <summary>
+        /// Mã khóa học của sinh viên, VD: Lớp KTPM 2020
+        /// </summary>
         [DisplayName("Lớp học")]
         [UIHint("StudentClassTemplate")]
         public int ClassId { get; set; }

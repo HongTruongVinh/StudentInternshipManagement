@@ -5,13 +5,12 @@ namespace StudentInternshipManagement.Models.Entities
 {
     public class Department : BaseEntity
     {
-        [DisplayName("Mã Khoa/Viện")]
+        [DisplayName("Mã Khoa")]
         public override int Id { get; set; }
 
-        
-        [MaxLength(50)]
-        [DisplayName("Tên Khoa/Viện")]
         [Required]
+        [MaxLength(50)]
+        [DisplayName("Tên Khoa")]
         public string DepartmentName { get; set; }
     }
 }

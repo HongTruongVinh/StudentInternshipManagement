@@ -8,7 +8,7 @@ namespace StudentInternshipManagement.Models.Entities
 {
     public class Admin : BaseEntity
     {
-        [DisplayName("Khoa/Viện")]
+        [DisplayName("Khoa")]
         [UIHint("DepartmentTemplate")]
         public int DepartmentId { get; set; }
 

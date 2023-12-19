@@ -9,6 +9,9 @@ namespace StudentInternshipManagement.Services.Implements
     public interface ILearningClassService : IGenericService<LearningClass>
     {
         IQueryable<Student> GetStudentList(int classId);
+
+        
+        IQueryable<LearningClass> GetAllLearningClassToRigisterInternship(int lastestSemesterId, Student student);// vinh đã thêm hàm này
     }
 
     #endregion
@@ -33,6 +36,13 @@ namespace StudentInternshipManagement.Services.Implements
         public IQueryable<Student> GetStudentList(int classId)
         {
             return _learningClassStudentService.GetByClass(classId).Select(m => m.Student);
+        }
+
+        public IQueryable<LearningClass> GetAllLearningClassToRigisterInternship(int lastestSemesterId, Student student)
+        {
+            var allClass = GetAll().Where(x => x.SemesterId == lastestSemesterId && x.Subject.DepartmentId == student.Class.DepartmentId);
+
+            return allClass;
         }
     }
 

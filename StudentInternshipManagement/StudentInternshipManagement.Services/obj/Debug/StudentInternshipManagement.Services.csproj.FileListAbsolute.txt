@@ -1,40 +1,120 @@
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.AssemblyReference.cache
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.CoreCompileInputs.cache
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.dll.config
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\EntityFramework.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.Cookies.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.OAuth.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Owin.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\EntityFramework.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.Cookies.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.OAuth.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.CopyComplete
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\log4net.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.dll.config
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.dll.config
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.dll.config
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Services\bin\Debug\log4net.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.dll.config
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.pdb
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Owin.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\log4net.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.pdb
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.dll.config
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.pdb
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.dll.config
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.pdb
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.pdb
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\log4net.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.AssemblyReference.cache
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.CoreCompileInputs.cache
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.CopyComplete
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Owin.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\log4net.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\log4net.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.AssemblyReference.cache
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.CoreCompileInputs.cache
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.CopyComplete
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Services.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Owin.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\log4net.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Models.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Repositories.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\StudentInternshipManagement.Utilities.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\bin\Debug\log4net.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.AssemblyReference.cache
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.CoreCompileInputs.cache
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.csproj.CopyComplete
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Services\obj\Debug\StudentInternshipManagement.Services.pdb

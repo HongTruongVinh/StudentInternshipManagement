@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using StudentInternshipManagement.Models.Entities;
 
@@ -7,10 +6,9 @@ namespace StudentInternshipManagement.Models.Contexts
 {
     public class WebContext : IdentityDbContext<ApplicationUser>
     {
-        public WebContext() : base("name=StudentInternshipManagement")
+        public WebContext() : base("name=StudentInternshipManagement")//name=StudentInternshipManagement
         {
-
-            Database.SetInitializer(new DataInitializer());
+            //Database.SetInitializer<WebContext>(new DataInitializer());
         }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)

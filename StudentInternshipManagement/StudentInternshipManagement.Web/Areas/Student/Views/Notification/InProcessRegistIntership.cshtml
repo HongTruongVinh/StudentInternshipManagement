@@ -1,0 +1,16 @@
+﻿@using Kendo.Mvc.UI
+@using Microsoft.AspNet.Identity
+@model StudentInternshipManagement.Models.Entities.Internship
+
+@{
+    ViewBag.Title = "Thông báo";
+    Layout = "~/Areas/Student/Views/Shared/_Layout.cshtml";
+
+    var StudentName = ViewBag.StudentName;
+}
+
+<h2>Thông báo tới @StudentName: Bạn đang có một nguyện vọng đang chờ xét duyệt từ ban quản lý!</h2>
+<h2></h2>
+<h2></h2>
+<h5>Chú ý: Bạn chỉ có thể đăng ký 1 nguyện vọng trong 1 thời điểm. Nếu bạn muốn đăng ký nguyện vọng thực tập mới thì hãy hủy nguyện vọng đang chờ xét duyệt trước đó</h5>
+

@@ -1,0 +1,78 @@
+﻿@using Kendo.Mvc.UI
+@using StudentInternshipManagement.Models.Entities
+@using StudentInternshipManagement.Services.ViewModel
+
+@{
+    ViewBag.Title = "Quản lý lớp sinh viên";
+    ViewBag.Category = "Quản lý";
+    ViewBag.Section = "Lớp sinh viên";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Kendo
+{
+    @Styles.Render("~/Content/kendo/styles")
+    @Scripts.Render("~/Scripts/kendo/scripts")
+}
+
+
+
+@(Html.Kendo().Grid<StudentClass>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Id).Hidden(true);
+          columns.Bound(c => c.ClassName);
+          columns.ForeignKey(p => p.DepartmentId, (IQueryable<Department>) ViewBag.Departments, "Id", "DepartmentName").EditorTemplateName("DepartmentTemplate");
+          columns.Command(command =>
+          {
+              command.Edit();
+              command.Destroy();
+          }).Width(180);
+      })
+      .ToolBar(toolbar => { toolbar.Create(); })
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .Pageable()
+      .Sortable(sortable => { sortable.SortMode(GridSortMode.SingleColumn); })
+      .Filterable(filterable => filterable.Mode(GridFilterMode.Row))
+      .Scrollable(scr => scr.Height(310))
+      .ClientDetailTemplateId("template")
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("StudentClasses_Read", "StudentClass"))
+          .Create(create => create.Action("StudentClasses_Create", "StudentClass"))
+          .Update(update => update.Action("StudentClasses_Update", "StudentClass"))
+          .Destroy(destroy => destroy.Action("StudentClasses_Destroy", "StudentClass"))
+      )
+      .Events(events => events
+          .Edit("onEdit")
+      ))
+
+<script id="template" type="text/kendo-tmpl">
+    @(Html.Kendo().Grid<StudentViewModel>()
+          .Name("grid_#=Id#") // template expression, to be evaluated in the master context
+          .Columns(columns =>
+          {
+              columns.Bound(c => c.UserName);
+              columns.Bound(c => c.FullName);
+              columns.Bound(c => c.BirthDate);
+              columns.Bound(c => c.Address);
+              columns.Bound(c => c.Phone);
+              columns.Bound(c => c.Cpa);
+          })
+          .DataSource(dataSource => dataSource
+              .Ajax()
+              .PageSize(10)
+              .Read(read => read.Action("GetStudentList", "StudentClass", new {classId = "#=Id#"}))
+          )
+          .Pageable()
+          .Sortable()
+          .ToClientTemplate())
+</script>
+<script type="text/javascript">
+
+    function onEdit(e) {
+        $('[name="Id"]').attr("readonly", true);
+    }
+</script>

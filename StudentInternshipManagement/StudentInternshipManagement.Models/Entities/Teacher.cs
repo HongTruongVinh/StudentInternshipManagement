@@ -9,7 +9,7 @@ namespace StudentInternshipManagement.Models.Entities
 {
     public class Teacher : BaseEntity
     {
-        [DisplayName("Khoa/Viện")]
+        [DisplayName("Khoa")]
         [UIHint("DepartmentTemplate")]
         public int DepartmentId { get; set; }
 

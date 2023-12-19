@@ -1,5 +1,6 @@
 ﻿namespace StudentInternshipManagement.Models.Migrations
 {
+    using StudentInternshipManagement.Models.Contexts;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -9,7 +10,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(StudentInternshipManagement.Models.Contexts.WebContext context)

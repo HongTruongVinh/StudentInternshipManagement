@@ -1,18 +1,54 @@
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.AssemblyReference.cache
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CoreCompileInputs.cache
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll.config
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\EntityFramework.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\EntityFramework.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CopyComplete
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.dll
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.pdb
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.Migrations.initial.resources
-C:\Users\HONG VINH\source\repos\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.GenerateResource.cache
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll.config
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.pdb
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.AssemblyReference.cache
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CoreCompileInputs.cache
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CopyComplete
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.dll
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.pdb
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.Migrations.InitialCreate.resources
+C:\Course\HK7\DA2\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.GenerateResource.cache
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.AssemblyReference.cache
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.Migrations.InitialCreate.resources
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.GenerateResource.cache
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CoreCompileInputs.cache
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CopyComplete
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.dll
+C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.AssemblyReference.cache
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.Migrations.InitialCreate.resources
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.GenerateResource.cache
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CoreCompileInputs.cache
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CopyComplete
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.dll
+C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.pdb

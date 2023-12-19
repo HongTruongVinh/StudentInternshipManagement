@@ -19,7 +19,7 @@ namespace StudentInternshipManagement.Models.Entities
         [DisplayName("Tên môn học")]
         public string SubjectName { get; set; }
 
-        [DisplayName("Khoa/Viện")]
+        [DisplayName("Khoa")]
         [UIHint("DepartmentTemplate")]
         public int DepartmentId { get; set; }
 

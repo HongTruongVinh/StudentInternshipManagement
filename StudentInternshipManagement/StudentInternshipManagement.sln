@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33801.468
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Web", "StudentInternshipManagement.Web\StudentInternshipManagement.Web.csproj", "{AA46FE8D-6961-4B7A-96F7-C6C7E3742AC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Web", "StudentInternshipManagement.Web\StudentInternshipManagement.Web.csproj", "{B5B05CAA-00C4-484D-8A25-E355B20790C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Models", "StudentInternshipManagement.Models\StudentInternshipManagement.Models.csproj", "{9EA976D7-5149-4C25-91D5-D602B01A1D33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Models", "StudentInternshipManagement.Models\StudentInternshipManagement.Models.csproj", "{00C097BE-838B-4C1D-9C62-03232FF77A40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Services", "StudentInternshipManagement.Services\StudentInternshipManagement.Services.csproj", "{F1273E55-04E6-4E48-979F-990AC10FFBBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Utilities", "StudentInternshipManagement.Utilities\StudentInternshipManagement.Utilities.csproj", "{F2B9EFC1-B0A3-4D60-B1C9-184767D2D9AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Repositories", "StudentInternshipManagement.Repositories\StudentInternshipManagement.Repositories.csproj", "{84E98128-64E5-4975-9609-7F7FB36F6F02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Repositories", "StudentInternshipManagement.Repositories\StudentInternshipManagement.Repositories.csproj", "{5EF0F288-7112-4185-A261-DB37061C8FC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Utilities", "StudentInternshipManagement.Utilities\StudentInternshipManagement.Utilities.csproj", "{8E869D38-D8E2-4255-AEA5-F32ED5C82DDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInternshipManagement.Services", "StudentInternshipManagement.Services\StudentInternshipManagement.Services.csproj", "{8F3749CF-ABBF-486B-8CCC-7E273D7F5FB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,31 +19,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA46FE8D-6961-4B7A-96F7-C6C7E3742AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA46FE8D-6961-4B7A-96F7-C6C7E3742AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA46FE8D-6961-4B7A-96F7-C6C7E3742AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA46FE8D-6961-4B7A-96F7-C6C7E3742AC3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EA976D7-5149-4C25-91D5-D602B01A1D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EA976D7-5149-4C25-91D5-D602B01A1D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EA976D7-5149-4C25-91D5-D602B01A1D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EA976D7-5149-4C25-91D5-D602B01A1D33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1273E55-04E6-4E48-979F-990AC10FFBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1273E55-04E6-4E48-979F-990AC10FFBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1273E55-04E6-4E48-979F-990AC10FFBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1273E55-04E6-4E48-979F-990AC10FFBBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84E98128-64E5-4975-9609-7F7FB36F6F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84E98128-64E5-4975-9609-7F7FB36F6F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84E98128-64E5-4975-9609-7F7FB36F6F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84E98128-64E5-4975-9609-7F7FB36F6F02}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E869D38-D8E2-4255-AEA5-F32ED5C82DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E869D38-D8E2-4255-AEA5-F32ED5C82DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E869D38-D8E2-4255-AEA5-F32ED5C82DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E869D38-D8E2-4255-AEA5-F32ED5C82DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B05CAA-00C4-484D-8A25-E355B20790C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B05CAA-00C4-484D-8A25-E355B20790C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B05CAA-00C4-484D-8A25-E355B20790C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B05CAA-00C4-484D-8A25-E355B20790C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C097BE-838B-4C1D-9C62-03232FF77A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C097BE-838B-4C1D-9C62-03232FF77A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C097BE-838B-4C1D-9C62-03232FF77A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C097BE-838B-4C1D-9C62-03232FF77A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2B9EFC1-B0A3-4D60-B1C9-184767D2D9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2B9EFC1-B0A3-4D60-B1C9-184767D2D9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2B9EFC1-B0A3-4D60-B1C9-184767D2D9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2B9EFC1-B0A3-4D60-B1C9-184767D2D9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF0F288-7112-4185-A261-DB37061C8FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF0F288-7112-4185-A261-DB37061C8FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF0F288-7112-4185-A261-DB37061C8FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF0F288-7112-4185-A261-DB37061C8FC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F3749CF-ABBF-486B-8CCC-7E273D7F5FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3749CF-ABBF-486B-8CCC-7E273D7F5FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3749CF-ABBF-486B-8CCC-7E273D7F5FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3749CF-ABBF-486B-8CCC-7E273D7F5FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {999F2FEB-56CB-49B5-A9F0-79647F8B4655}
+		SolutionGuid = {6EC40000-EF8D-4222-AF7D-B218096F10A8}
 	EndGlobalSection
 EndGlobal

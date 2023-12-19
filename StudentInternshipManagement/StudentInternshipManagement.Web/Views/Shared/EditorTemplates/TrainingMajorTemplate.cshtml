@@ -1,0 +1,12 @@
+﻿@using Kendo.Mvc.UI
+@using StudentInternshipManagement.Models.Entities
+@using StudentInternshipManagement.Services.ViewModel
+@model int
+@(Html.Kendo().ComboBoxFor(m => m)
+      .Filter("contains")
+      .Placeholder("Chọn Định hướng")
+      .Suggest(true)
+      .DataValueField("Id")
+      .DataTextField("TrainingMajorName")
+      .BindTo((IQueryable<TrainingMajor>)ViewBag.TrainingMajors)
+      )

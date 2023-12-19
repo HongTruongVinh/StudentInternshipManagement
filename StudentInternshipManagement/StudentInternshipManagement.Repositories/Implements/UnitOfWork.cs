@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using StudentInternshipManagement.Models.Contexts;
 using StudentInternshipManagement.Models.Entities;
 
 namespace StudentInternshipManagement.Repositories.Implements

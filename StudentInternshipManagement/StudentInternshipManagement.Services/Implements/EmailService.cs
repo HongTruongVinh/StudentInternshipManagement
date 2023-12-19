@@ -40,12 +40,25 @@ namespace StudentInternshipManagement.Services.Implements
         private readonly ISemesterService _semesterService;
         private readonly ITeacherService _teacherService;
 
-        public EmailService(IInternshipService internshipService, ITeacherService teacherService,
+        //public EmailService(IInternshipService internshipService, ITeacherService teacherService,
+        //    ISemesterService semesterService, IGroupService groupService,
+        //    ICompanyTrainingMajorService companyTrainingMajorService, ICompanyService companyService,
+        //    IEmailHistoryService emailHistoryService)
+        //{
+        //    _internshipService = internshipService;
+        //    _teacherService = teacherService;
+        //    _semesterService = semesterService;
+        //    _groupService = groupService;
+        //    _companyTrainingMajorService = companyTrainingMajorService;
+        //    _companyService = companyService;
+        //    _emailHistoryService = emailHistoryService;
+        //}
+
+        public EmailService(ITeacherService teacherService,
             ISemesterService semesterService, IGroupService groupService,
             ICompanyTrainingMajorService companyTrainingMajorService, ICompanyService companyService,
             IEmailHistoryService emailHistoryService)
         {
-            _internshipService = internshipService;
             _teacherService = teacherService;
             _semesterService = semesterService;
             _groupService = groupService;
@@ -192,6 +205,7 @@ namespace StudentInternshipManagement.Services.Implements
 
         private MailMessage CreateProcessEmailToStudent()
         {
+            //if(_internshipService == null) _internshipService = new InternshipService(unitOfWork, );
             IQueryable<Student> students = _internshipService.GetByLatestSemester().Select(i => i.Student);
             int semester = _semesterService.GetLatest().Id;
             var mail = new MailMessage();
