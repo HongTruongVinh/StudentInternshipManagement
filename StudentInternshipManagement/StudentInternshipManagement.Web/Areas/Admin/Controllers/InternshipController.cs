@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Web.Mvc;
 using Hangfire;
 using Hangfire.Storage;
@@ -87,6 +88,29 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
         public ActionResult Internships_Read([DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<Internship> internships = _internshipService.GetByLatestSemester();
+
+            //var x = internships.ToList();
+            //var internship1 = x.FirstOrDefault();
+
+            //var x1 = internship1.Id;
+            //var x2 = internship1.Class.SemesterId;
+            //var x3 = internship1.RegistrationDate;
+            //var x4 = internship1.Status;
+            //var x5 = internship1.Student.User.FullName;
+            //var x6 = internship1.Class.ClassName;
+            //var x7 = internship1.Major.Company.CompanyName;
+            //var x8 = internship1.Major.TrainingMajor.TrainingMajorName;
+            //var x9 = internship1.Student.LearningClassStudents.FirstOrDefault(l => l.ClassId == internship1.ClassId)
+            //    ?.MidTermPoint;
+            //var x10 = internship1.Student.LearningClassStudents.FirstOrDefault(l => l.ClassId == internship1.ClassId)
+            //    ?.EndTermPoint;
+            //var x11 = internship1.Student.LearningClassStudents.FirstOrDefault(l => l.ClassId == internship1.ClassId)
+            //    ?.TotalPoint;
+            //var x12 = _groupService.GetByInternship(internship1)?.GroupName;
+
+            //var x13_1 = _groupService.GetByInternship(internship1);
+
+            //var x13 = x13_1?.Teacher.User.FullName;
 
             DataSourceResult result = internships.ToDataSourceResult(request, internship => new
             {

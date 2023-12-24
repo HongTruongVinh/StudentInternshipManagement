@@ -1,10 +1,11 @@
 ﻿@using Kendo.Mvc.UI
 @using StudentInternshipManagement.Models.Entities
+@using StudentInternshipManagement.Services.ViewModel
 @{
     ViewBag.Title = "Nhóm thực tập";
     ViewBag.Category = "Thực tập";
     ViewBag.Section = "Các nhóm hưỡng dẫn";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Teacher/Views/Shared/_Layout.cshtml";
 }
 
 @section Kendo
@@ -36,23 +37,23 @@
       .ClientDetailTemplateId("template"))
 
 <script id="template" type="text/kendo-tmpl">
-    @(Html.Kendo().Grid<Student>()
-          .Name("grid_#=GroupId#") // template expression, to be evaluated in the master context
-          .Columns(columns =>
-          {
-              columns.Bound(o => o.User.UserName);
-              columns.Bound(o => o.User.FullName);
-              columns.Bound(o => o.User.BirthDate);
-              columns.Bound(o => o.User.Address);
-              columns.Bound(o => o.User.Phone);
-              columns.Bound(o => o.Cpa);
-          })
-          .DataSource(dataSource => dataSource
-              .Ajax()
-              .PageSize(10)
-              .Read(read => read.Action("GetStudentList", "Group", new {groupId = "#=GroupId#"}))
-          )
-          .Pageable()
-          .Sortable()
-          .ToClientTemplate())
+    @(Html.Kendo().Grid<StudentViewModel>()
+      .Name("grid_#=Id#") // Truyền Id của group vào đây để grid này có tên là duy nhất
+      .Columns(columns =>
+      {
+          columns.Bound(o => o.UserName);
+          columns.Bound(o => o.FullName);
+          columns.Bound(o => o.BirthDate);
+          columns.Bound(o => o.Address);
+          columns.Bound(o => o.Phone);
+          columns.Bound(o => o.Cpa);
+      })
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .PageSize(10)
+          .Read(read => read.Action("GetStudentList", "Group", new {groupId = "#=Id#"})) // gửi Id của group lên server
+      )
+      .Pageable()
+      .Sortable()
+      .ToClientTemplate())
 </script>

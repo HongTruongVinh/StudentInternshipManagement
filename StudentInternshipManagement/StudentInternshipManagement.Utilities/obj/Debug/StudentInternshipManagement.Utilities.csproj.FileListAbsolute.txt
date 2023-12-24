@@ -16,3 +16,12 @@ C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternship
 C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CopyComplete
 C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.dll
 C:\Users\HONG VINH\OneDrive\Desktop\DA2_Doc\Project\UpdatedOld\StudentInternshipManagement-master\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\StudentInternshipManagement.Utilities.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\log4net.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\bin\Debug\log4net.xml
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.AssemblyReference.cache
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.csproj.CopyComplete
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Utilities\obj\Debug\StudentInternshipManagement.Utilities.pdb

@@ -52,3 +52,21 @@ C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentIn
 C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CopyComplete
 C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.dll
 C:\Users\HONG VINH\OneDrive\Desktop\StudentInternshipManagement-master\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll.config
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\StudentInternshipManagement.Models.pdb
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.AssemblyReference.cache
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.Migrations.InitialCreate.resources
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.GenerateResource.cache
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CoreCompileInputs.cache
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.csproj.CopyComplete
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.dll
+C:\Users\HONG VINH\OneDrive\Desktop\New folder (2)\New folder\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Models\obj\Debug\StudentInternshipManagement.Models.pdb

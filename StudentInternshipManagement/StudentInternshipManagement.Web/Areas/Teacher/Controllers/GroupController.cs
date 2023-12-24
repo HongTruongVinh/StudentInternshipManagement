@@ -1,7 +1,10 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Microsoft.AspNet.Identity;
 using StudentInternshipManagement.Services.Implements;
+using StudentInternshipManagement.Services.ViewModel;
 
 namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 {
@@ -38,7 +41,8 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 
         public ActionResult Groups_Read([DataSourceRequest] DataSourceRequest request)
         {
-            var groups = _groupService.GetAll();
+            var teacher = _teacherService.GetByUserName(User.Identity.GetUserName());
+            var groups = _groupService.GetByTeacher(teacher.Id);
             var result = groups.ToDataSourceResult(request, group => new
             {
                 group.Id,
@@ -55,14 +59,16 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 
         public ActionResult GetStudentList(int groupId, [DataSourceRequest] DataSourceRequest request)
         {
-            var result = _groupService.GetById(groupId).Members.ToDataSourceResult(request, student => new
+            var listStudents = StudentViewModel.convertEntitiesToListViewModel(_groupService.GetById(groupId).Members.ToList());
+
+            var result = listStudents.ToDataSourceResult(request, student => new
             {
                 student.Id,
-                student.User.UserName,
-                student.User.FullName,
-                student.User.BirthDate,
-                student.User.Address,
-                student.User.Phone,
+                student.UserName,
+                student.FullName,
+                student.BirthDate,
+                student.Address,
+                student.Phone,
                 student.Cpa,
                 student.ClassId
             });

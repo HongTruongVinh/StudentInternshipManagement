@@ -59,8 +59,8 @@ namespace StudentInternshipManagement.Services.Implements
         public void ProcessRegistration()
         {
             AssignInternship();
-            CreateGroup();
-            //_emailService.SendProcessEmail();
+            //CreateGroup(); // Vinh bỏ tạm dòng code này vì hàm CreateGroup sẽ được gọi luôn trong trong hàm AssignInternship trên 
+            //_emailService.SendProcessEmail(); // Vinh bỏ tạm dòng code này vì tạm thời chưa xử lý gửi thông báo đến mail 
 
             //vinh thêm dòng code sau để db lưu dữ liệu
             UnitOfWork.Commit(); 
@@ -68,6 +68,9 @@ namespace StudentInternshipManagement.Services.Implements
 
         public void AssignInternship()
         {
+            //Vinh tạo ra list này để lưu lại những nv đã đc xử lý thành công và truyền list này vào hàm CreateGroup mới 
+            var listSuccessInterships = new List<Internship>();
+
             var lateRegisteredInternships = new List<Internship>();
             List<CompanyTrainingMajor> leftMajors =
                 UnitOfWork.Repository<CompanyTrainingMajor>().TableNoTracking.ToList();
@@ -89,6 +92,8 @@ namespace StudentInternshipManagement.Services.Implements
                     item.CompanyId = item.Major.CompanyId;
 
                     UnitOfWork.Repository<Internship>().Update(item);
+
+                    listSuccessInterships.Add(item);
                 }
                 else // Nếu nguyện vọng này hết slot thực tập thì xử lý
                 {
@@ -117,6 +122,8 @@ namespace StudentInternshipManagement.Services.Implements
 
                     UnitOfWork.Repository<Internship>().Update(item);
                     lateRegisteredInternships.Remove(item);
+
+                    listSuccessInterships.Add(item);
                 }
                 else // ngược lại, nếu ko còn công ty nào tuyển định hướng đúng với nv của sv thì sẽ xếp sv vào 1 công ty bất kỳ đang tuyển môn học của sv 
                 {
@@ -136,6 +143,8 @@ namespace StudentInternshipManagement.Services.Implements
 
                         UnitOfWork.Repository<Internship>().Update(item);
                         lateRegisteredInternships.Remove(item);
+
+                        listSuccessInterships.Add(item);
                     }
                 }
             }
@@ -147,11 +156,13 @@ namespace StudentInternshipManagement.Services.Implements
                 UnitOfWork.Repository<Internship>().Update(item);
             }
 
-            UnitOfWork.Commit(); // Thêm dòng này để database được lưu. Nếu không, khi mà
-                                 // thực hiện CreateGroup, ta lấy groupByMajors như function bên dưới
-                                 // thì sẽ không thể lấy được các Internship ở trên 
-                                 //  vừa cập nhật  status = Success
-                                 // 
+            //UnitOfWork.Commit(); // Thêm dòng này để database được lưu. Nếu không, khi mà
+            // thực hiện CreateGroup, ta lấy groupByMajors như function bên dưới
+            // thì sẽ không thể lấy được các Internship ở trên 
+            //  vừa cập nhật  status = Success
+            // Tuy nhiên nếu thêm dòng code này thì sẽ bị duplicate student 
+
+            CreateGroup(listSuccessInterships);
         }
 
         [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
@@ -200,6 +211,69 @@ namespace StudentInternshipManagement.Services.Implements
                         && t.Value > 0 ).Key; // lấy ra người thầy mà thuộc khoa X == lớp của môn học cũng phải thuộc khoa X 
 
                     group.TeacherId = teacher.Id;
+
+                    teacherAssign[teacher]--;
+
+                    group.CreatedAt = DateTime.Now;
+                    group.UpdatedAt = DateTime.Now;
+
+                    UnitOfWork.Repository<Group>().Add(group);
+                    groupId++;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Vinh tạo ra hàm này thay thế hàm cũ vì hàm cũ không lấy được những Internship có status success vừa được cập nhật
+        /// </summary>
+        /// <param name="internships"></param>
+        [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
+        public void CreateGroup(List<Internship> internships)
+        {
+            // lấy list các nguyện vọng có trạng thái success (những nv đã đăng ký thành công)
+            // và nhóm chúng lại thành các nhóm có cùng sự tuyển dụng
+            List<IGrouping<CompanyTrainingMajor, Internship>> groupByMajors = internships.GroupBy(i => i.Major).ToList();
+
+            IQueryable<Teacher> teachers = UnitOfWork.Repository<Teacher>().TableNoTracking;
+
+            // các giáo viên gán với số lượng nhóm còn có thể hưỡng dẫn
+            Dictionary<Teacher, int> teacherAssign = teachers.ToDictionary(t => t, t => InternshipConstants.GroupsPerTeacher);
+
+            foreach (IGrouping<CompanyTrainingMajor, Internship> item in groupByMajors) // duyệt qua list nguyện vọng đăng ký cùng sự tuyển dụng
+            {
+                List<Internship> members = item.Select(i => i).ToList();
+                var groups = new List<List<Internship>>();
+                for (var i = 0; i < members.Count; i += InternshipConstants.StudentsPerGroups)
+                    groups.Add(members.GetRange(i, Math.Min(InternshipConstants.StudentsPerGroups, members.Count - i)));
+                //while (members.Any())
+                //{
+                //    groups.Add(members.Take(5).ToList());
+                //    members = members.Skip(5);
+                //}
+
+                var groupId = 1;
+                foreach (List<Internship> groupItem in groups) // duyệt qua list các nhóm đã được tạo ở trên 
+                {
+                    //đặt các giá trị cho các nhóm vừa tạo ở trên 
+                    var group = new Group
+                    {
+                        GroupName =
+                            $"{groupItem.FirstOrDefault().Major.Company.CompanyName}-{groupItem.FirstOrDefault().Major.TrainingMajor.TrainingMajorName}-{groupId}",
+                        ClassId = groupItem.FirstOrDefault().Class.Id,
+                        CompanyId = groupItem.FirstOrDefault().Major.CompanyId,
+                        TrainingMajorId = groupItem.FirstOrDefault().Major.TrainingMajorId,
+                        Members = groupItem.Select(g => g.Student).ToList(),
+                        LeaderId = groupItem.OrderByDescending(g => g.Student.Cpa).FirstOrDefault().Student.Id, // người có điểm cao nhất sẽ làm trưởng nhóm 
+                        Major = groupItem.FirstOrDefault().Major,
+                    };
+
+                    Teacher teacher = teacherAssign.FirstOrDefault(t =>
+                        t.Key.Department.Id == groupItem.FirstOrDefault().Class.Subject.Department.Id
+                        && t.Value > 0).Key; // lấy ra người thầy mà thuộc khoa X == lớp của môn học cũng phải thuộc khoa X 
+
+                    group.TeacherId = teacher.Id;
+
+                    group.Teacher = UnitOfWork.Repository<Teacher>().Table.Where(t => t.Id == teacher.Id).FirstOrDefault();
 
                     teacherAssign[teacher]--;
 
