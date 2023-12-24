@@ -62,6 +62,10 @@ namespace StudentInternshipManagement.Services.ViewModel
         [DisplayName("Lớp đào tạo")]
         public string ClassName { get; set; }
 
+        [DisplayName("Email")]
+        public string Email { get; set; }
+
+
         public StudentViewModel() { }
 
         public StudentViewModel(Student entity)
@@ -72,6 +76,7 @@ namespace StudentInternshipManagement.Services.ViewModel
             Address = entity.User.Address;
             Phone = entity.User.Phone;
             Avatar = entity.User.Avatar;
+            Email = entity.User.Email;
 
             Cpa = (entity.Cpa * 10) / 4;
             ClassId = entity.ClassId;

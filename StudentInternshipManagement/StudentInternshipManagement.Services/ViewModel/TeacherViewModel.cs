@@ -53,6 +53,9 @@ namespace StudentInternshipManagement.Services.ViewModel
         [DisplayName("Khoa")]
         public string DepartmentName { get; set; }
 
+        [DisplayName("Email")]
+        public string Email { get; set; }
+
         public TeacherViewModel() { }
 
         public TeacherViewModel(Teacher entity) 
@@ -65,6 +68,7 @@ namespace StudentInternshipManagement.Services.ViewModel
             DepartmentId = entity.DepartmentId;
             Avatar = entity.User.Avatar;
             DepartmentName = entity.Department.DepartmentName;
+            Email = entity.User.Email;
 
             Id = entity.Id;
             UpdatedAt = entity.UpdatedAt;

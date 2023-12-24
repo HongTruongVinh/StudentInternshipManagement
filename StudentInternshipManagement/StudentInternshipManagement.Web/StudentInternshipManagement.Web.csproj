@@ -338,6 +338,7 @@
     <Compile Include="Areas\Student\Controllers\NotificationController.cs" />
     <Compile Include="Areas\Student\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Student\Controllers\StudentBaseController.cs" />
+    <Compile Include="Areas\Student\Controllers\TeacherController.cs" />
     <Compile Include="Areas\Student\Controllers\TrainingMajorController.cs" />
     <Compile Include="Areas\Student\StudentAreaRegistration.cs" />
     <Compile Include="Areas\Teacher\Controllers\CompanyController.cs" />
@@ -346,6 +347,7 @@
     <Compile Include="Areas\Teacher\Controllers\InboxController.cs" />
     <Compile Include="Areas\Teacher\Controllers\InternshipController.cs" />
     <Compile Include="Areas\Teacher\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Teacher\Controllers\TeacherController.cs" />
     <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -2575,6 +2577,9 @@
     <Content Include="Areas\Admin\Views\Group\Index.cshtml" />
     <Content Include="Areas\Student\Views\Company\Index.cshtml" />
     <Content Include="Areas\Teacher\Views\Company\Index.cshtml" />
+    <Content Include="Areas\Student\Views\Teacher\Index.cshtml" />
+    <Content Include="Areas\Teacher\Views\Teacher\Index.cshtml" />
+    <Content Include="Areas\Student\Views\LearningClass\Index.cshtml" />
     <None Include="Scripts\kendo\2019.1.115\kendo.all-vsdoc.js" />
     <None Include="Scripts\kendo\2019.1.115\kendo.all.min.intellisense.js" />
     <Content Include="Scripts\kendo\2019.1.115\kendo.all.min.js" />

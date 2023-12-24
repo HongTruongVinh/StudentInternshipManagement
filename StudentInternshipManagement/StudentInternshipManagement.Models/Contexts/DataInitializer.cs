@@ -741,7 +741,7 @@ namespace StudentInternshipManagement.Models.Contexts
                 {
                     Title = "Thông báo về việc đăng ký đồ án tốt nghiệp kỳ hè 2023",
                     Content =
-                        "Viện CNTT&TT thông báo về việc đăng ký đồ án tốt nghiệp (ĐATN) kỳ hè 2023 như sau: Sinh viên tất cả các hệ đào tạo (bao gồm cả CNCN) chỉ có thể đăng ký làm ĐATN trong kỳ hè với …",
+                        "Khoa KTTT thông báo về việc đăng ký đồ án tốt nghiệp (ĐATN) kỳ hè 2022-2023 như sau: Sinh viên tất cả các hệ đào tạo (bao gồm cả CNCN) chỉ có thể đăng ký làm ĐATN trong kỳ hè với …",
                     Time = new DateTime(2023, 5, 18),
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now,
@@ -761,7 +761,7 @@ namespace StudentInternshipManagement.Models.Contexts
                 {
                     Title = "Thông báo hoàn thiện giấy tờ TTDN kỳ hè 2023",
                     Content =
-                        "Để kết thúc thực tập 2023, các bạn sinh viên lưu ý liên lạc sớm với giao viên phụ trách để phối hợp hoàn thiện giấy tờ. 1 – Bảng đánh giá sinh viên thực tập do công ty thực …",
+                        "Để kết thúc thực tập HK2 2022-2023, các bạn sinh viên lưu ý liên lạc sớm với giao viên phụ trách để phối hợp hoàn thiện giấy tờ. 1 – Bảng đánh giá sinh viên thực tập do công ty thực …",
                     Time = new DateTime(2023, 5, 7),
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now,
@@ -769,9 +769,9 @@ namespace StudentInternshipManagement.Models.Contexts
                 },
                 new News
                 {
-                    Title = "Kế hoạch bảo vệ Đồ án tốt nghiệp học kỳ 2 2022-2023",
+                    Title = "Kế hoạch bảo vệ Đồ án tốt nghiệp học kỳ 1 năm học 2023-2024",
                     Content =
-                        "Viện CNTT&TT xin thông báo về kế hoạch bảo vệ Đồ án tốt nghiệp (ĐATN) của học kỳ 2023 như sau: 1. Về cách thức tổ chức: – Bộ môn chuyên môn: Tổ chức thu quyển, phản biện, và chấm …",
+                        "Khoa KTTT xin thông báo về kế hoạch bảo vệ Đồ án tốt nghiệp (KLTN) của học kỳ HK1 2023-2024 như sau: 1. Về cách thức tổ chức: – Bộ môn chuyên môn: Tổ chức thu quyển, phản biện, và chấm …",
                     Time = new DateTime(2023, 5, 2),
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now,
@@ -799,9 +799,9 @@ namespace StudentInternshipManagement.Models.Contexts
                 },
                 new News
                 {
-                    Title = "Khóa học lập trình robot hợp tác với Viện Công nghệ Shibaura",
+                    Title = "Khóa học lập trình robot hợp tác với Tập đoàn công nghệ Shibaura",
                     Content =
-                        "Trong khuôn khổ các hoạt động hợp tác giữa ĐHBK Hà Nội và Viện Công nghệ Shibaura, Nhật Bản, Viện CNTT&TT sẽ tổ chức khóa học lập trình robot từ 1/3/2018-13/3/2018. Tham gia lớp học sẽ có 27 sinh viên …",
+                        "Trong khuôn khổ các hoạt động hợp tác giữa DH CNTT và Tập đoàn Công nghệ Shibaura, Nhật Bản, Khoa Kỹ thuật máy tinh sẽ tổ chức khóa học lập trình robot từ 1/3/2023-13/3/2023. Tham gia lớp học sẽ có 27 sinh viên …",
                     Time = new DateTime(2023, 4, 2),
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now,

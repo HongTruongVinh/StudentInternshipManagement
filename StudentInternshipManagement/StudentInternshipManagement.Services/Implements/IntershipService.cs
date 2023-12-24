@@ -93,7 +93,22 @@ namespace StudentInternshipManagement.Services.Implements
 
                     UnitOfWork.Repository<Internship>().Update(item);
 
-                    listSuccessInterships.Add(item);
+                    // Vinh them cac dong code sau
+                    listSuccessInterships.Add(item); // thêm vào ds cách sv đăng ký nv thành công 
+
+                    var learningClassStudent = new LearningClassStudent() // thêm sinh viên vào lớp đã đăng ký trong nv 
+                    {
+                        ClassId = item.ClassId,
+                        StudentId = item.StudentId,
+                        IsDeleted = false,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = DateTime.Now,
+
+                        Student = UnitOfWork.Repository<Student>().Table.Where(s => s.Id == item.StudentId).FirstOrDefault(),
+                        Class = UnitOfWork.Repository<LearningClass>().Table.Where(s => s.Id == item.ClassId).FirstOrDefault(),
+                    };
+
+                    UnitOfWork.Repository<LearningClassStudent>().Add(learningClassStudent);
                 }
                 else // Nếu nguyện vọng này hết slot thực tập thì xử lý
                 {
@@ -123,7 +138,22 @@ namespace StudentInternshipManagement.Services.Implements
                     UnitOfWork.Repository<Internship>().Update(item);
                     lateRegisteredInternships.Remove(item);
 
-                    listSuccessInterships.Add(item);
+                    // Vinh them cac dong code sau
+                    listSuccessInterships.Add(item); // thêm vào ds cách sv đăng ký nv thành công 
+
+                    var learningClassStudent = new LearningClassStudent() // thêm sinh viên vào lớp đã đăng ký trong nv 
+                    {
+                        ClassId = item.ClassId,
+                        StudentId = item.StudentId,
+                        IsDeleted = false,
+                        CreatedAt = DateTime.Now,
+                        UpdatedAt = DateTime.Now,
+
+                        Student = UnitOfWork.Repository<Student>().Table.Where(s => s.Id == item.StudentId).FirstOrDefault(),
+                        Class = UnitOfWork.Repository<LearningClass>().Table.Where(s => s.Id == item.ClassId).FirstOrDefault(),
+                    };
+
+                    UnitOfWork.Repository<LearningClassStudent>().Add(learningClassStudent);
                 }
                 else // ngược lại, nếu ko còn công ty nào tuyển định hướng đúng với nv của sv thì sẽ xếp sv vào 1 công ty bất kỳ đang tuyển môn học của sv 
                 {
@@ -144,7 +174,22 @@ namespace StudentInternshipManagement.Services.Implements
                         UnitOfWork.Repository<Internship>().Update(item);
                         lateRegisteredInternships.Remove(item);
 
-                        listSuccessInterships.Add(item);
+                        // Vinh them cac dong code sau
+                        listSuccessInterships.Add(item); // thêm vào ds cách sv đăng ký nv thành công 
+
+                        var learningClassStudent = new LearningClassStudent() // thêm sinh viên vào lớp đã đăng ký trong nv 
+                        {
+                            ClassId = item.ClassId,
+                            StudentId = item.StudentId,
+                            IsDeleted = false,
+                            CreatedAt = DateTime.Now,
+                            UpdatedAt = DateTime.Now,
+
+                            Student = UnitOfWork.Repository<Student>().Table.Where(s => s.Id == item.StudentId).FirstOrDefault(),
+                            Class = UnitOfWork.Repository<LearningClass>().Table.Where(s => s.Id == item.ClassId).FirstOrDefault(),
+                        };
+
+                        UnitOfWork.Repository<LearningClassStudent>().Add(learningClassStudent);
                     }
                 }
             }
@@ -161,6 +206,7 @@ namespace StudentInternshipManagement.Services.Implements
             // thì sẽ không thể lấy được các Internship ở trên 
             //  vừa cập nhật  status = Success
             // Tuy nhiên nếu thêm dòng code này thì sẽ bị duplicate student 
+            // Với code mới như hiện tại thì không cần
 
             CreateGroup(listSuccessInterships);
         }

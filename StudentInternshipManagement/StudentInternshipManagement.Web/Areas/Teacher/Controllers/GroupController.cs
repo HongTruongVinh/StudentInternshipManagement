@@ -68,6 +68,7 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
                 student.FullName,
                 student.BirthDate,
                 student.Address,
+                student.Email,
                 student.Phone,
                 student.Cpa,
                 student.ClassId

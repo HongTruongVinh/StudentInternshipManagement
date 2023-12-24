@@ -30,7 +30,9 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
             ViewBag.Subjects = _subjectService.GetAll();
             ViewBag.Semesters = _semesterService.GetAll();
             ViewBag.Students = _studentService.GetAll();
-            return null;
+            ViewBag.LearningClasses = _learningClassService.GetAll();
+
+            return View();
         }
 
         public ActionResult LearningClasses_Read([DataSourceRequest] DataSourceRequest request)
@@ -72,8 +74,36 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
         {
             var subjectId = _learningClassService.GetById(classId).SubjectId;
             var subject = _subjectService.GetById(subjectId);
-            var x = subject.TrainingMajors.ToList();
             return Json(subject.TrainingMajors, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetStudentList(int classId, [DataSourceRequest] DataSourceRequest request)
+        {
+            DataSourceResult result = _learningClassService.GetById(classId).LearningClassStudents.Where(x => x.StudentId == CurrentStudentId).ToDataSourceResult(
+                request, student => new
+                {
+                    student.StudentId,
+                    student.ClassId,
+                    student.MidTermPoint,
+                    student.EndTermPoint,
+                    student.TotalPoint
+                });
+
+            return Json(result);
+        }
+
+        public ActionResult JoinedLearningClasses_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            var result = _studentService.GetLearningClassList(CurrentStudentId).ToDataSourceResult(request, learningClass =>
+                new
+                {
+                    learningClass.Id,
+                    learningClass.ClassName,
+                    learningClass.SubjectId,
+                    learningClass.SemesterId
+                });
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
