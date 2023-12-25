@@ -1,4 +1,5 @@
-﻿using StudentInternshipManagement.Services.Implements;
+﻿using Microsoft.AspNet.Identity;
+using StudentInternshipManagement.Services.Implements;
 using StudentInternshipManagement.Web.Controllers;
 using System.Linq;
 using Unity;

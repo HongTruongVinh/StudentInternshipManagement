@@ -257,28 +257,28 @@ namespace StudentInternshipManagement.Models.Contexts
             {
                 new StudentClass
                 {
-                    ClassName = "CNTT 2.01",
+                    ClassName = "CNTT 2020.1",
                     Department = departments[0],
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
                 },
                 new StudentClass
                 {
-                    ClassName = "CNTT 2.02",
+                    ClassName = "CNTT 2020.2",
                     Department = departments[0],
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
                 },
                 new StudentClass
                 {
-                    ClassName = "CNTT 2.03",
+                    ClassName = "CNTT 2020.3",
                     Department = departments[0],
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
                 },
                 new StudentClass
                 {
-                    ClassName = "CNTT 2.04",
+                    ClassName = "CNTT 2019.1",
                     Department = departments[0],
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now

@@ -48,6 +48,7 @@ namespace StudentInternshipManagement.Services.ViewModel
         [DisplayName("Điểm trung bình")]
         public float Cpa { get; set; }
 
+        [Required]
         [DisplayName("Lớp học")]
         [UIHint("StudentClassTemplate")]
         public int ClassId { get; set; }

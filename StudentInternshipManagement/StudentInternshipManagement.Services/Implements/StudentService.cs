@@ -12,6 +12,7 @@ namespace StudentInternshipManagement.Services.Implements
         IQueryable<LearningClass> GetLearningClassBySemesterList(int studentId);
         IQueryable<LearningClass> GetLearningClassList(int studentId);
         Student GetByUserName(string userName);
+        Student GetByUserId(string userId);
     }
 
     #endregion
@@ -54,6 +55,13 @@ namespace StudentInternshipManagement.Services.Implements
         {
             int semesterId = _semesterService.GetLatest().Id;
             return GetLearningClassList(studentId).Where(c => c.SemesterId == semesterId);
+        }
+
+        public Student GetByUserId(string userId)
+        {
+            var students = UnitOfWork.Repository<Student>().Table.ToList();
+
+            return students.FirstOrDefault(x => x.UserId == userId);
         }
 
     }

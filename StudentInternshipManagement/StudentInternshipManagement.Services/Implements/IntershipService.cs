@@ -71,6 +71,10 @@ namespace StudentInternshipManagement.Services.Implements
             //Vinh tạo ra list này để lưu lại những nv đã đc xử lý thành công và truyền list này vào hàm CreateGroup mới 
             var listSuccessInterships = new List<Internship>();
 
+            //var lateRegisteredInternships = new List<Internship>();
+            //List<CompanyTrainingMajor> leftMajors =
+            //    UnitOfWork.Repository<CompanyTrainingMajor>().TableNoTracking.ToList();
+
             var lateRegisteredInternships = new List<Internship>();
             List<CompanyTrainingMajor> leftMajors =
                 UnitOfWork.Repository<CompanyTrainingMajor>().TableNoTracking.ToList();
@@ -94,7 +98,7 @@ namespace StudentInternshipManagement.Services.Implements
                     UnitOfWork.Repository<Internship>().Update(item);
 
                     // Vinh them cac dong code sau
-                    listSuccessInterships.Add(item); // thêm vào ds cách sv đăng ký nv thành công 
+                    listSuccessInterships.Add(UnitOfWork.Repository<Internship>().GetById(item.Id)); // thêm vào ds cách sv đăng ký nv thành công 
 
                     var learningClassStudent = new LearningClassStudent() // thêm sinh viên vào lớp đã đăng ký trong nv 
                     {
@@ -139,7 +143,19 @@ namespace StudentInternshipManagement.Services.Implements
                     lateRegisteredInternships.Remove(item);
 
                     // Vinh them cac dong code sau
-                    listSuccessInterships.Add(item); // thêm vào ds cách sv đăng ký nv thành công 
+                    listSuccessInterships.Add(UnitOfWork.Repository<Internship>().GetById(item.Id));
+                    // Lý do thêm dòng code trên: thêm vào ds cách nv được xử lý
+                    // thành công để để lúc nữa CreateGroup dựa trên những nv vọng này.
+                    // Tại sao lại là: listSuccessInterships.Add(UnitOfWork.Repository<Internship>().GetById(item.Id))
+                    // chứ không phải listSuccessInterships.Add(item) vì những intership này là thực thể riêng biệt ánh xạ
+                    // với các intership dưới database chứ không phải là các thực thể dưới db. Cho nên việc thay đổi trên item
+                    // thì các intership dưới db vẫn không có thay đổi vì vậy ta phải lấy nguyên thực thể intership dưới db lên
+                    // bằng câu lệnh listSuccessInterships.Add(UnitOfWork.Repository<Internship>().GetById(item.Id))
+                    // để lúc nữa CreateGroup dựa trên những thực thể intership dưới db chứ không phải dựa trên những 
+                    // intership (là item) bản sao này
+
+
+
 
                     var learningClassStudent = new LearningClassStudent() // thêm sinh viên vào lớp đã đăng ký trong nv 
                     {
@@ -175,7 +191,7 @@ namespace StudentInternshipManagement.Services.Implements
                         lateRegisteredInternships.Remove(item);
 
                         // Vinh them cac dong code sau
-                        listSuccessInterships.Add(item); // thêm vào ds cách sv đăng ký nv thành công 
+                        listSuccessInterships.Add(UnitOfWork.Repository<Internship>().GetById(item.Id));  // thêm vào ds cách sv đăng ký nv thành công 
 
                         var learningClassStudent = new LearningClassStudent() // thêm sinh viên vào lớp đã đăng ký trong nv 
                         {
