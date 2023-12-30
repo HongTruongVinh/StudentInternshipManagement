@@ -15,17 +15,21 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
     {
         private readonly IGroupService _groupService;
         private readonly IMessageService _messageService;
+        private readonly IUserService _userService;
 
-        public InboxController(IMessageService messageService, IGroupService groupService)
+        public InboxController(IMessageService messageService, IGroupService groupService, IUserService userService)
         {
             _messageService = messageService;
             _groupService = groupService;
+            _userService = userService;
         }
 
         // GET: Student/Inbox
         public ActionResult Index()
         {
-            var id = User.Identity.GetUserName();
+            var userName = User.Identity.GetUserName();
+            var id = _userService.GetByUserName(userName).Id;
+
             var messages = _messageService.GetReceivedEmail(id);
             ViewBag.UnRead = messages.Count(m => m.Status != MessageStatus.Read);
             return View();
@@ -33,7 +37,9 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 
         public PartialViewResult GetMessagePage(int? page, int type)
         {
-            var id = User.Identity.GetUserName();
+            var userName = User.Identity.GetUserName();
+            var id = _userService.GetByUserName(userName).Id;
+
             IQueryable<Message> messages = null;
             var pageSize = 5;
             switch (type)

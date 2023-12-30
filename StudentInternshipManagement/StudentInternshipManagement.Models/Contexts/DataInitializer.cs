@@ -29,9 +29,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user = new ApplicationUser
             {
-                UserName = "20131070",
-                Email = "20131070@yopmail.com",
-                Avatar = "20131070.png",
+                UserName = "20521070",
+                Email = "20521070@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Trần Văn Đức",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),
@@ -47,9 +47,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user2 = new ApplicationUser
             {
-                UserName = "20130325",
-                Email = "20130325@yopmail.com",
-                Avatar = "20130325.png",
+                UserName = "20520325",
+                Email = "20520325@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Cao Thị Ngân",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),
@@ -65,9 +65,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user3 = new ApplicationUser
             {
-                UserName = "20134713",
-                Email = "20134713@yopmail.com",
-                Avatar = "20134713.png",
+                UserName = "20524713",
+                Email = "20524713@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Trần Danh Hoàn",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),
@@ -83,9 +83,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user4 = new ApplicationUser
             {
-                UserName = "20133847",
-                Email = "20133847@yopmail.com",
-                Avatar = "20133847.png",
+                UserName = "20523847",
+                Email = "20523847@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Trần Đức Mạnh",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),
@@ -101,9 +101,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user5 = new ApplicationUser
             {
-                UserName = "20132820",
-                Email = "20132820@yopmail.com",
-                Avatar = "20132820.png",
+                UserName = "20522820",
+                Email = "20522820@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Hà Văn Hoàn",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),
@@ -119,9 +119,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user6 = new ApplicationUser
             {
-                UserName = "20132231",
-                Email = "20132231@yopmail.com",
-                Avatar = "20132231.png",
+                UserName = "20522231",
+                Email = "20522231@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Phạm Anh Tân",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),
@@ -137,9 +137,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user7 = new ApplicationUser
             {
-                UserName = "20130707",
-                Email = "20130707@yopmail.com",
-                Avatar = "20130707.png",
+                UserName = "20520707",
+                Email = "20520707@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Triệu Văn Dũng",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),
@@ -155,9 +155,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user8 = new ApplicationUser
             {
-                UserName = "20132558",
-                Email = "20132558@yopmail.com",
-                Avatar = "20132558.png",
+                UserName = "20522558",
+                Email = "20522558@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Mai Thị Giang",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),
@@ -173,9 +173,9 @@ namespace StudentInternshipManagement.Models.Contexts
 
             var user9 = new ApplicationUser
             {
-                UserName = "20134579",
-                Email = "20134579@yopmail.com",
-                Avatar = "20134579.png",
+                UserName = "20524579",
+                Email = "20524579@yopmail.com",
+                Avatar = "DefaultAvatarStudent.png",
                 FullName = "Nguyễn Thúc Huynh",
                 Address = "MK",
                 BirthDate = new DateTime(2002, 5, 14),

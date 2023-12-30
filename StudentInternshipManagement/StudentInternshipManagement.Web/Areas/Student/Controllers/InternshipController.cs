@@ -18,10 +18,11 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
         private readonly ILearningClassService _learningClassService;
         private readonly IStudentService _studentService;
         private readonly ITrainingMajorService _trainingMajorService;
+        private readonly ICompanyTrainingMajorService _companyTrainingMajorService;
 
         public InternshipController(IInternshipService internshipService, IStudentService studentService,
             ILearningClassService learningClassService, ICompanyService companyService,
-            ITrainingMajorService trainingMajorService, IGroupService groupService)
+            ITrainingMajorService trainingMajorService, IGroupService groupService, ICompanyTrainingMajorService companyTrainingMajorService)
         {
             _internshipService = internshipService;
             _studentService = studentService;
@@ -29,6 +30,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
             _companyService = companyService;
             _trainingMajorService = trainingMajorService;
             _groupService = groupService;
+            _companyTrainingMajorService = companyTrainingMajorService;
         }
 
         public ActionResult Index()
@@ -96,15 +98,15 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
                 // StudentId gửi từ View tới server là mã sinh viên (username) chứ không phải Id của sinh viên 
                 // trong table sinh viên cho nên phải sửa lại mới có thể lưu được
                 internship.StudentId = _studentService.GetByUserName(User.Identity.GetUserName()).Id;
-                
-                internship.Major = _trainingMajorService.GetAll().Where(x => x.Id == internship.TrainingMajorId).FirstOrDefault()
-                    .CompanyTrainingMajors.Where(x => x.CompanyId == internship.CompanyId).FirstOrDefault();//Nếu không gán dữ liệu 
-                // cho thuộc tính này thì cột Major_Id trong CSDL sẽ bị null và khi load danh sách lên sẽ lỗi 
 
+                internship.Major = _companyTrainingMajorService.GetById(internship.TrainingMajorId); //Nếu không gán dữ liệu 
+                // cho thuộc tính này thì cột Major_Id trong CSDL sẽ bị null và khi load danh sách lên sẽ lỗi 
+                
                 internship.CreatedAt = DateTime.Now;
                 internship.UpdatedAt = DateTime.Now;
                 internship.CreatedBy = User.Identity.GetUserId();
                 internship.UpdatedBy = User.Identity.GetUserId();
+
                 ViewBag.Message = _internshipService.Add(internship) ? "Thành công" : "Thất bại";
             }
             return RedirectToAction("Index");

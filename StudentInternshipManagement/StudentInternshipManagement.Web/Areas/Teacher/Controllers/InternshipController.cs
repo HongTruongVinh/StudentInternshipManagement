@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Microsoft.AspNet.Identity;
 using StudentInternshipManagement.Models.Entities;
 using StudentInternshipManagement.Services.Implements;
+using StudentInternshipManagement.Services.ViewModel;
 
 namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 {
@@ -24,7 +26,7 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Students = _studentService.GetAll();
+            ViewBag.Students = StudentViewModel.convertEntitiesToListViewModel(_studentService.GetAll().ToList());
             ViewBag.LearningClasses = _learningClassService.GetAll();
             return View();
         }

@@ -1,5 +1,7 @@
 ﻿@using Kendo.Mvc.UI
 @using StudentInternshipManagement.Models.Entities
+@using StudentInternshipManagement.Services.ViewModel
+
 @{
     ViewBag.Title = "Đánh giá thực tập";
     ViewBag.Category = "Thực tập";
@@ -16,8 +18,9 @@
           .Name("grid")
           .Columns(columns =>
           {
-              columns.ForeignKey(p => p.StudentId, (IQueryable<Student>)ViewBag.Students, "UserId", "UserId").EditorTemplateName("StudentTemplate");
-              columns.ForeignKey(p => p.ClassId, (IQueryable<LearningClass>)ViewBag.LearningClasses, "ClassName", "ClassName").EditorTemplateName("LearningClassTemplate");
+              columns.ForeignKey(p => p.StudentId, (List<StudentViewModel>)ViewBag.Students, "Id", "UserName").Title("Mã sinh viên");
+              columns.ForeignKey(p => p.StudentId, (List<StudentViewModel>)ViewBag.Students, "Id", "FullName");
+              columns.ForeignKey(p => p.ClassId, (IQueryable<LearningClass>)ViewBag.LearningClasses, "Id", "ClassName").EditorTemplateName("LearningClassTemplate");
               columns.Bound(c => c.MidTermPoint);
               columns.Bound(c => c.EndTermPoint);
               columns.Bound(c => c.TotalPoint);
