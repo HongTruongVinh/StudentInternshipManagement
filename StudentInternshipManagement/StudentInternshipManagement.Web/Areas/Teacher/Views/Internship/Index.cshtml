@@ -14,13 +14,13 @@
     @Styles.Render("~/Content/kendo/styles")
     @Scripts.Render("~/Scripts/kendo/scripts")
 }
-@(Html.Kendo().Grid<LearningClassStudent>()
+@(Html.Kendo().Grid<LearningClassStudentViewModel>()
           .Name("grid")
           .Columns(columns =>
           {
-              columns.ForeignKey(p => p.StudentId, (List<StudentViewModel>)ViewBag.Students, "Id", "UserName").Title("Mã sinh viên");
-              columns.ForeignKey(p => p.StudentId, (List<StudentViewModel>)ViewBag.Students, "Id", "FullName");
-              columns.ForeignKey(p => p.ClassId, (IQueryable<LearningClass>)ViewBag.LearningClasses, "Id", "ClassName").EditorTemplateName("LearningClassTemplate");
+              columns.Bound(c => c.StudentCode);
+              columns.Bound(c => c.FullName);
+              columns.Bound(c => c.ClassName);
               columns.Bound(c => c.MidTermPoint);
               columns.Bound(c => c.EndTermPoint);
               columns.Bound(c => c.TotalPoint);
@@ -44,4 +44,19 @@
               .Read(read => read.Action("LearningClassStudents_Read", "Internship"))
               .Update(update => update.Action("LearningClassStudents_Update", "Internship"))
           )
+          .Events(events => events
+                .Edit("onEdit")
+          )
 )
+
+<script type="text/javascript">
+
+    function onEdit(e) {
+        $('[name="StudentCode"]').attr("readonly", true);
+        $('[name="FullName"]').attr("readonly", true);
+        $('[name="ClassName"]').attr("readonly", true);
+        $('[name="TotalPoint"]').attr("readonly", true);
+    }
+
+
+</script>
