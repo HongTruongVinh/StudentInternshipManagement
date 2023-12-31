@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -7,6 +8,7 @@ using PagedList;
 using StudentInternshipManagement.Models.Constants;
 using StudentInternshipManagement.Models.Entities;
 using StudentInternshipManagement.Services.Implements;
+using Telerik.Windows.Documents.Spreadsheet.Expressions.Functions;
 
 namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 {
@@ -37,9 +39,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 
         public PartialViewResult GetMessagePage(int? page, int type)
         {
-            var userName = User.Identity.GetUserName();
-            var id = _userService.GetByUserName(userName).Id;
-
+            var id = User.Identity.GetUserId();
             IQueryable<Message> messages = null;
             var pageSize = 5;
             switch (type)
@@ -54,7 +54,6 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
                     messages = _messageService.GetDraftEmail(id);
                     break;
             }
-
             var mails = messages.ToPagedList(page ?? 1, pageSize);
             ViewBag.Type = type;
             return PartialView("_MessagePage", mails);
@@ -83,6 +82,20 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
                     model.File = $"{file.FileName}";
                 }
 
+                model.CreatedAt = DateTime.Now; 
+                model.UpdatedAt = DateTime.Now;
+                model.CreatedBy = User.Identity.GetUserId();
+                model.UpdatedBy = User.Identity.GetUserId();
+
+                model.SenderId = User.Identity.GetUserId();
+                model.Sender = _userService.GetById(User.Identity.GetUserId());
+
+                var receiverEmail = model.ReceiverId;// model.ReceiverId nhận được từ view là mail người nhận chứ không phải Id 
+                var receiver = _userService.GetByEmail(receiverEmail);
+                model.ReceiverId = receiver.Id;
+                model.Receiver = receiver;
+                model.Status = MessageStatus.Sent;
+
                 ViewBag.Message = _messageService.Add(model) ? "Gửi thành công" : "Gửi thất bại";
             }
 
@@ -92,6 +105,11 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
         public ActionResult View(int? id)
         {
             var message = _messageService.GetById(id ?? 1);
+            if (message != null)
+            {
+                message.Status = MessageStatus.Read;
+                _messageService.Update(message);
+            }
             return View(message);
         }
     }

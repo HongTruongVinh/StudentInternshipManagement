@@ -32,7 +32,7 @@
             </label>
 
             <i class="message-star ace-icon fa fa-star orange2"></i>
-            <span class="sender" title="">@(item.ReceiverId) </span>
+            <span class="sender" title="">@(item.Sender.FullName) </span>
             <span class="time">@item.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")</span>
 
             <span class="attachment" style='display: @(string.IsNullOrEmpty(item.File) ? "none":"inline-block")'>
@@ -40,7 +40,7 @@
             </span>
 
             <span class="summary">
-                <a href='@($"Inbox/View/{item.Id}")'>
+                <a href="@Url.Action("View", "Inbox", new { id = item.Id })">
                     <span class="text">
                         @item.Title
                     </span>

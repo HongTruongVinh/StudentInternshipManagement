@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,16 +16,21 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
     {
         private readonly IGroupService _groupService;
         private readonly IMessageService _messageService;
-        // GET: Student/Inbox
-        public InboxController(IGroupService groupService, IMessageService messageService)
+        private readonly IUserService _userService;
+
+        // GET: Teacher/Inbox
+        public InboxController(IGroupService groupService, IMessageService messageService, IUserService userService)
         {
             _groupService = groupService;
             _messageService = messageService;
+            _userService = userService;
         }
 
         public ActionResult Index()
         {
-            var id = User.Identity.GetUserName();
+            var userName = User.Identity.GetUserName();
+            var id = _userService.GetByUserName(userName).Id;
+
             var messages = _messageService.GetReceivedEmail(id);
             ViewBag.UnRead = messages.Count(m => m.Status != MessageStatus.Read);
             return View();
@@ -32,7 +38,8 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 
         public PartialViewResult GetMessagePage(int? page, int type)
         {
-            var id = User.Identity.GetUserName();
+            //var id = User.Identity.GetUserName();
+            var id = User.Identity.GetUserId();
             IQueryable<Message> messages = null;
             var pageSize = 5;
             switch (type)
@@ -47,7 +54,6 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
                     messages = _messageService.GetDraftEmail(id);
                     break;
             }
-
             var mails = messages.ToPagedList(page ?? 1, pageSize);
             ViewBag.Type = type;
             return PartialView("_MessagePage", mails);
@@ -76,6 +82,20 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
                     model.File = $"{file.FileName}";
                 }
 
+                model.CreatedAt = DateTime.Now;
+                model.UpdatedAt = DateTime.Now;
+                model.CreatedBy = User.Identity.GetUserId();
+                model.UpdatedBy = User.Identity.GetUserId();
+
+                model.SenderId = User.Identity.GetUserId();
+                model.Sender = _userService.GetById(User.Identity.GetUserId());
+
+                var receiverEmail = model.ReceiverId;// model.ReceiverId nhận được từ view là mail người nhận chứ không phải Id 
+                var receiver = _userService.GetByEmail(receiverEmail);
+                model.ReceiverId = receiver.Id;
+                model.Receiver = receiver;
+                model.Status = MessageStatus.Sent;
+
                 ViewBag.Message = _messageService.Add(model) ? "Gửi thành công" : "Gửi thất bại";
             }
 
@@ -85,6 +105,11 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
         public ActionResult View(int? id)
         {
             var message = _messageService.GetById(id??1);
+            if (message != null)
+            {
+                message.Status = MessageStatus.Read;
+                _messageService.Update(message);
+            }
             return View(message);
         }
     }

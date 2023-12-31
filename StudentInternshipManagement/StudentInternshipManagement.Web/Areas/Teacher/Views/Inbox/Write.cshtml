@@ -7,7 +7,7 @@
     ViewBag.Title = "Trao đổi thông tin";
     ViewBag.Category = "Thực tập";
     ViewBag.Section = "Sinh viên";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Teacher/Views/Shared/_Layout.cshtml";
     var student = (string)ViewBag.Student;
     var username = User.Identity.GetUserName();
 }
@@ -63,7 +63,7 @@
 
             <div class="col-sm-9">
                 <span class="input-icon">
-                    <input type="text" name="StudentId" id="form-field-recipient" value="@student" />
+                    <input type="text" name="ReceiverId" id="form-field-recipient" value="@student" /> 
                     <i class="ace-icon fa fa-user"></i>
                 </span>
             </div>

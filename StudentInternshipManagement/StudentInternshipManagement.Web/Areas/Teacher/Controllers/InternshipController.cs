@@ -40,8 +40,8 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
                 StudentCode = learningClassStudent.StudentCode,
                 FullName = learningClassStudent.FullName,
                 ClassName = learningClassStudent.ClassName,
-                ClassId = learningClassStudent.ClassId,
-                StudentId = learningClassStudent.StudentId,
+                ClassId = learningClassStudent.ClassId,       //phải lấy 2 thuộc tính ClassId và StudentId ra ngoài view. Vì ở ngoài view, Kendo đã  
+                StudentId = learningClassStudent.StudentId,  //thiết lập 2 thuộc tính đó làm Id ( model.Id(p => p.ClassId) và model.Id(p => p.StudentId) )
                 MidTermPoint = learningClassStudent.MidTermPoint,
                 EndTermPoint = learningClassStudent.EndTermPoint,
                 TotalPoint = learningClassStudent.TotalPoint,

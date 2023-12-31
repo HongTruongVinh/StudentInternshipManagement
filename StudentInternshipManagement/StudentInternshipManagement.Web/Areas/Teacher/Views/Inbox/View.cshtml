@@ -3,14 +3,14 @@
     ViewBag.Title = "Trao đổi thông tin";
     ViewBag.Category = "Thực tập";
     ViewBag.Section = "Sinh viên";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Teacher/Views/Shared/_Layout.cshtml";
 }
 
 <div id="id-message-item-navbar" class="message-navbar clearfix">
     <div class="message-bar">
         <div class="message-toolbar">
             <div class="inline position-relative align-left">
-                <button type="button" class="btn btn-xs btn-white btn-primary"  onclick="location.href = '@Url.Action("Write", "Inbox", new {student = Model.SenderId})'">
+                <button type="button" class="btn btn-xs btn-white btn-primary"  onclick="location.href = '@Url.Action("Write", "Inbox", new {student = Model.Sender.Email})'">
                     <i class="ace-icon fa fa-mail-reply blue"></i>
                     <span class="bigger-110">Reply</span>
                 </button>
@@ -35,25 +35,36 @@
 
 <div class="message-content" id="id-message-content">
     <div class="message-header clearfix">
-        <div class="blue bigger-125" >
+        <div class="blue bigger-125">
             <div style="text-align:center;">@Model.Title</div>
         </div>
-        <div class="pull-left">
 
-
-            <div class="space-4"></div>
-
-            <i class="ace-icon fa fa-star orange2"></i>
-
-            &nbsp;
-            <img class="middle" alt="Avatar" src='~/@($"Images/avatars/{Model.Receiver.Avatar}")' width="32">
-            &nbsp;
-            <a href="#" class="sender">@Model.Receiver.UserName</a>
-
-            &nbsp;
-            <i class="ace-icon fa fa-clock-o bigger-110 orange middle"></i>
-            <span class="time grey">@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")</span>
+        <div class="row">
+            <div class="col-md-1">
+                <span class="bolder">Người gửi </span>
+            </div>
+            <div class="col-md-6">
+                <img class="middle" alt="Avatar" src='~/@($"Images/avatars/{Model.Sender.Avatar}")' width="32">
+                &nbsp;
+                <a href="#" class="sender">@Model.Sender.Email</a>
+                <a href="#" class="sender">( @Model.Sender.FullName )</a>
+                &nbsp;
+                <i class="ace-icon fa fa-clock-o bigger-110 orange middle"></i>
+                <span class="time grey">@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")</span>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-md-1">
+                <span class="bolder">Người nhận </span>
+            </div>
+            <div class="col-md-6">
+                <img class="middle" alt="Avatar" src='~/@($"Images/avatars/{Model.Receiver.Avatar}")' width="32">
+                &nbsp;
+                <a href="#" class="sender">@Model.Receiver.Email</a>
+                <a href="#" class="sender">( @Model.Receiver.FullName )</a>
+            </div>
+        </div>
+
 
         <div class="pull-right action-buttons">
             <a href="#">
