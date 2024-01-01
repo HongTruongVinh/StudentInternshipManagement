@@ -35,6 +35,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 
         public ActionResult Index()
         {
+            GetUserUnreadMassages();
             ViewBag.Students = _studentService.GetAll();
             ViewBag.LearningClasses = _learningClassService.GetAll();
             ViewBag.Companies = _companyService.GetAll();
@@ -44,7 +45,8 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 
         public ActionResult Register()
         {
-            if(IsInProcessRegistIntership())
+            GetUserUnreadMassages();
+            if (IsInProcessRegistIntership())
             {
                 return RedirectToAction("InProcessRegistIntership", "Notification");
             }

@@ -31,6 +31,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 
         public ActionResult Index()
         {
+            GetUserUnreadMassages();
             ViewBag.Companies = _companyService.GetAll();
             ViewBag.TrainingMajors = _trainingMajorService.GetAll();
             ViewBag.Students = _studentService.GetAll();

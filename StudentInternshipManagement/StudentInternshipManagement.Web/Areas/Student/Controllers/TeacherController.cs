@@ -25,6 +25,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
         // GET: Student/Teacher
         public ActionResult Index()
         {
+            GetUserUnreadMassages();
             ViewBag.Departments = _departmentService.GetAll();
             return View();
         }

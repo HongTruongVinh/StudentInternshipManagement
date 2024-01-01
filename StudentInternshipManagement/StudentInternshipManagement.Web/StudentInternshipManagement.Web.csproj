@@ -731,6 +731,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\avatars\20131070.jpg" />
     <Content Include="Images\avatars\20131070.png" />
+    <Content Include="Images\avatars\Admin.jpg" />
     <Content Include="Images\avatars\Admin.png" />
     <Content Include="Images\avatars\avatar.png" />
     <Content Include="Images\avatars\avatar1.png" />
@@ -738,6 +739,9 @@
     <Content Include="Images\avatars\avatar3.png" />
     <Content Include="Images\avatars\avatar4.png" />
     <Content Include="Images\avatars\avatar5.png" />
+    <Content Include="Images\avatars\DefaultAvatarAdmin.png" />
+    <Content Include="Images\avatars\DefaultAvatarStudent.png" />
+    <Content Include="Images\avatars\DefaultAvatarTeacher.png" />
     <Content Include="Images\avatars\profile-pic.jpg" />
     <Content Include="Images\avatars\TrungLD.png" />
     <Content Include="Images\avatars\user.jpg" />

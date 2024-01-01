@@ -26,6 +26,7 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 
         public ActionResult Index()
         {
+            GetUserUnreadMassages();
             //ViewBag.Students = _studentService.GetAll();
             //ViewBag.LearningClasses = _learningClassService.GetAll();
             return View();

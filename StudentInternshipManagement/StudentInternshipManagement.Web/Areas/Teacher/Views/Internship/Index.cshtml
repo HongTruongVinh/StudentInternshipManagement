@@ -34,7 +34,7 @@
               sortable.SortMode(GridSortMode.SingleColumn);
           })
           .Filterable(filterable => filterable.Mode(GridFilterMode.Row))
-          .Scrollable()
+          .Scrollable(scr => scr.Height(310))
           .DataSource(dataSource => dataSource
               .Ajax()
               .Model(model =>

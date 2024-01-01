@@ -33,11 +33,13 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
         // GET: Student/Notification
         public ActionResult Index()
         {
+            GetUserUnreadMassages();
             return View();
         }
 
         public ActionResult InProcessRegistIntership()
         {
+            GetUserUnreadMassages();
             var student = _studentService.GetByUserName(User.Identity.GetUserName());
 
             ViewBag.StudentName = student.User.FullName;

@@ -21,6 +21,7 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 
         public ActionResult Index()
         {
+            GetUserUnreadMassages();
             var teacher = _teacherService.GetById(CurrentTeacherId);
             ViewBag.Email = CurrentUser.Email;
             return View(teacher);
@@ -28,6 +29,7 @@ namespace StudentInternshipManagement.Web.Areas.Teacher.Controllers
 
         public ActionResult Edit()
         {
+            GetUserUnreadMassages();
             var teacher = _teacherService.GetById(CurrentTeacherId);
             var teacherViewModel = new TeacherViewModel(teacher);
             return View(teacherViewModel);

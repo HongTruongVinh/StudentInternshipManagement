@@ -21,6 +21,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
         // GET: Student/Profile
         public ActionResult Index()
         {
+            GetUserUnreadMassages();
             var student = _studentService.GetById(CurrentStudentId);
             ViewBag.Email = CurrentUser.Email;
             var studentViewModel = new StudentViewModel(student);
@@ -29,6 +30,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 
         public ActionResult Edit()
         {
+            GetUserUnreadMassages();
             var student = _studentService.GetById(CurrentStudentId);
             var studentViewModel = new StudentViewModel(student);
             return View(studentViewModel);

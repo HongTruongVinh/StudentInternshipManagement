@@ -29,6 +29,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
         // GET: Student/Inbox
         public ActionResult Index()
         {
+            GetUserUnreadMassages();
             var userName = User.Identity.GetUserName();
             var id = _userService.GetByUserName(userName).Id;
 
@@ -61,6 +62,7 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 
         public ActionResult Write(string teacher)
         {
+            GetUserUnreadMassages();
             ViewBag.TeacherList = _groupService.GetByStudent(CurrentStudentId).Select(g => g.Teacher.User.FullName);
             ViewBag.Teacher = teacher;
             return View();
@@ -104,11 +106,15 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
 
         public ActionResult View(int? id)
         {
+            GetUserUnreadMassages();
             var message = _messageService.GetById(id ?? 1);
             if (message != null)
             {
-                message.Status = MessageStatus.Read;
-                _messageService.Update(message);
+                if(message.SenderId != User.Identity.GetUserId())//nếu user đọc mail không phải của user này viết thì sẽ cập nhật mail thành đã đọc
+                {
+                    message.Status = MessageStatus.Read;
+                    _messageService.Update(message);
+                }
             }
             return View(message);
         }
