@@ -265,18 +265,18 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult SaveStudentExcelSheet(List<StudentViewModel> rows)
         {
-            var dictionaryResult = AddUserService.AddStudentsByList(new StudentInternshipManagement.Models.Contexts.WebContext(), rows, User.Identity.GetUserId());
+            var dictionaryFailureResult = AddUserService.AddStudentsByList(new StudentInternshipManagement.Models.Contexts.WebContext(), rows, User.Identity.GetUserId()).Where(x => x.Value == "failure");
 
             ViewBag.Message = "Lưu thành công";
 
-            ViewBag.DictionaryResult = dictionaryResult;
+            ViewBag.DictionaryResult = dictionaryFailureResult;
 
             string result = "success";
 
             return Json(new
             {
                 result = result,
-                dictionaryResult = dictionaryResult
+                dictionaryFailureResult = dictionaryFailureResult
             }
             , JsonRequestBehavior.AllowGet);
 

@@ -154,9 +154,9 @@
                     $("#btn_saveStudentSheet").prop('disabled', true);
                 }
 
-                var dictionaryResult = dataResponse['dictionaryResult'];
+                var dictionaryFailureResult = dataResponse['dictionaryFailureResult'];
 
-                var array = $.map(dictionaryResult, function (value, key) { //key là tên sv, value là thông tin lỗi 
+                var array = $.map(dictionaryFailureResult, function (value, key) { //key là tên sv, value là thông tin lỗi 
                     return [key] + " ,lỗi: " +[value];
                 });
 
