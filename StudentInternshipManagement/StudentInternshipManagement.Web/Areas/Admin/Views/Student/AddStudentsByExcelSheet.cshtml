@@ -52,7 +52,7 @@
 
 @if (ViewBag.NotExistStudentClassNames != null)
 {
-    <div id="modal-form" class="modal show">
+    <div id="modal-form-notExistClassName" class="modal show">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -67,7 +67,7 @@
                     </ol>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default btn_CloseModel" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-default btn_notExistClassNameClose" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
         </div>
@@ -104,6 +104,24 @@
 
 }
 
+<div id="modal-form-failureAddStudent" class="modal hide">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <strong>Danh sách những sinh viên thêm vào hệ thống bị lỗi</strong>
+            </div>
+            <div class="modal-body">
+                <ol id="listStudentFailure">
+
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn_failureAddStudentClose" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script type="text/javascript">
 
@@ -136,14 +154,35 @@
                     $("#btn_saveStudentSheet").prop('disabled', true);
                 }
 
+                var dictionaryResult = dataResponse['dictionaryResult'];
+
+                var array = $.map(dictionaryResult, function (value, key) { //key là tên sv, value là thông tin lỗi 
+                    return [key] + " ,lỗi: " +[value];
+                });
+
+                if (array.length > 0) {
+
+                    $.each(array, function (key, value) {
+                        var newLi = $('<li>' + value + '</li>');
+                        $('#listStudentFailure').append(newLi)
+                    });
+                    
+                    $('#modal-form-failureAddStudent').addClass("hide");
+                    $('#modal-form-failureAddStudent').addClass("show");
+                }
             }
         });
     });
 
-    $(".btn_CloseModel").click(function (e) {
-        //$('#modal-form').modal('hide');
-        $('#modal-form').addClass("hide");
-        $('#modal-form').removeClass("show");
+    $(".btn_notExistClassNameClose").click(function (e) {
+        $('#modal-form-notExistClassName').addClass("hide");
+        $('#modal-form-notExistClassName').removeClass("show");
+        e.stopPropagation();
+    });
+
+    $(".btn_failureAddStudentClose").click(function (e) {
+        $('#modal-form-failureAddStudent').addClass("hide");
+        $('#modal-form-failureAddStudent').removeClass("show");
         e.stopPropagation();
     });
 

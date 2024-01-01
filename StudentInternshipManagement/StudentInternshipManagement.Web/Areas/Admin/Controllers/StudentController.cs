@@ -192,6 +192,7 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
                                 if (studentClass != null)
                                 {
                                     newStudent.ClassId = studentClass.Id;
+                                    newStudent.ClassName = studentClass.ClassName;
                                 }
                                 else
                                 {
@@ -264,13 +265,18 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult SaveStudentExcelSheet(List<StudentViewModel> rows)
         {
+            var dictionaryResult = AddUserService.AddStudentsByList(new StudentInternshipManagement.Models.Contexts.WebContext(), rows, User.Identity.GetUserId());
+
             ViewBag.Message = "Lưu thành công";
+
+            ViewBag.DictionaryResult = dictionaryResult;
 
             string result = "success";
 
             return Json(new
             {
-                result = result
+                result = result,
+                dictionaryResult = dictionaryResult
             }
             , JsonRequestBehavior.AllowGet);
 

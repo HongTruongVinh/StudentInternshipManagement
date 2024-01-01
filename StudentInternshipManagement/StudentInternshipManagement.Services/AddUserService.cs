@@ -215,6 +215,41 @@ namespace StudentInternshipManagement.Services
             }
         }
 
+        public static Dictionary<string, string> AddStudentsByList(WebContext context, List<StudentViewModel> listStudentViewModel, string createdBy, string program = "Kỹ sư")
+        {
+            Dictionary<string,string> results = new Dictionary<string,string>();
+
+            foreach (var student in listStudentViewModel)
+            {
+                var studentName = student.FullName + " " + student.BirthDate.ToString("dd/MM/yyyy") + " " + student.Phone;
+
+                try
+                {
+                    bool successful = AddStudent(context, student, createdBy, program = "Kỹ sư");
+
+                    if (successful == true)
+                    {
+                        results.Add(studentName, "success");
+                    }
+                    else
+                    {
+                        results.Add(studentName, "failure");
+                    }
+                }
+                catch 
+                {
+                    try
+                    {
+                        results.Add(studentName, "failure"); // Nếu có 2 trường giữ liệu giống hệt nhau và bị lỗi thì 
+                                                             // Dictionary sẽ bị lỗi vì trùng key. Nên nếu bị trùng key thì sẽ ko làm gì cả 
+                    }
+                    catch { }
+                }
+            }
+
+            return results;
+        }
+
         public static string GenerateStudentUserName(IStudentService studentService)
         {
             string userName = "1000";
