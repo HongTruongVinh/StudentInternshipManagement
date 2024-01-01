@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using StudentInternshipManagement.Models.Contexts;
 using StudentInternshipManagement.Models.Entities;
+using StudentInternshipManagement.Services.Implements;
 using StudentInternshipManagement.Services.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace StudentInternshipManagement.Services
         Max = 9999
     }
 
+    //public interface IAddUserService
+    //{
+    //    bool AddTeacher(WebContext context, TeacherViewModel v, string createdBy);
+    //}
+
     public class AddUserService
     {
         public AddUserService() { }
@@ -33,7 +39,7 @@ namespace StudentInternshipManagement.Services
                 {
 
                     UserName = v.UserName,
-                    Email = v.UserName + "@yopmail.com",
+                    Email = v.UserName + "@gm.uit.edu.com",
                     Avatar = "DefaultAvatarTeacher.png",
                     FullName = v.FullName,
                     Address = v.Address,
@@ -95,7 +101,7 @@ namespace StudentInternshipManagement.Services
                 var user = new ApplicationUser
                 {
                     UserName = v.UserName,
-                    Email = v.UserName + "@yopmail.com",
+                    Email = v.UserName + "@gm.uit.edu.com",
                     Avatar = "DefaultAvatarStudent.png",
                     FullName = v.FullName,
                     Address = v.Address,
@@ -159,7 +165,7 @@ namespace StudentInternshipManagement.Services
                 var user = new ApplicationUser
                 {
                     UserName = v.UserName,
-                    Email = v.UserName + "@yopmail.com",
+                    Email = v.UserName + "@gm.uit.edu.com",
                     Avatar = "DefaultAvatarStudent.png",
                     FullName = v.FullName,
                     Address = v.Address,
@@ -207,6 +213,31 @@ namespace StudentInternshipManagement.Services
                 return false;
 
             }
+        }
+
+        public static string GenerateStudentUserName(IStudentService studentService)
+        {
+            string userName = "1000";
+
+            var lastStudent = studentService.GetAll().ToList().LastOrDefault();
+
+            var lastStudentUserName = lastStudent.User.UserName;
+
+            string year = lastStudentUserName.Substring(0, 4);
+
+            string numberStudent = lastStudentUserName.Substring(4);
+
+            if (year == DateTime.Now.ToString("yyyy"))
+            {
+                userName = (int.Parse(numberStudent) + 1).ToString();
+            }
+            else
+            {
+                userName = DateTime.Now.ToString("yyyy") + (int.Parse(userName) + 1).ToString();
+            }
+
+
+            return userName;
         }
     }
 }

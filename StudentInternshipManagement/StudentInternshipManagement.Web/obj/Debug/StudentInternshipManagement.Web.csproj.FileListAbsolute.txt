@@ -219,3 +219,4 @@ C:\DoAn2\StudentInternshipManagement\StudentInternshipManagement\StudentInternsh
 C:\DoAn2\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Web\obj\Debug\StudentInternshipManagement.Web.csproj.CopyComplete
 C:\DoAn2\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Web\obj\Debug\StudentInternshipManagement.Web.dll
 C:\DoAn2\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Web\obj\Debug\StudentInternshipManagement.Web.pdb
+C:\DoAn2\StudentInternshipManagement\StudentInternshipManagement\StudentInternshipManagement.Web\obj\Debug\StudentInternshipManagement.Web.csproj.ResolveComReference.cache

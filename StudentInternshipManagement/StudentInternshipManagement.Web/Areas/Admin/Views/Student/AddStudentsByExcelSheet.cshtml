@@ -1,0 +1,150 @@
+﻿@using Kendo.Mvc.UI
+@using StudentInternshipManagement.Models.Entities
+@using StudentInternshipManagement.Services.ViewModel
+
+
+@{
+    ViewBag.Title = "Quản lý sinh viên";
+    ViewBag.Category = "Quản lý";
+    ViewBag.Section = "Sinh viên";
+    ViewBag.Title = "Nhập danh sách sinh viên bằng file Excel Sheet";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Kendo
+{
+    @Styles.Render("~/Content/kendo/styles")
+    @Scripts.Render("~/Scripts/kendo/scripts")
+}
+
+
+@using (Html.BeginForm("UploadStudentSheet", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-2">
+            <label for="file">Nhập Excel File:</label>
+        </div>
+        <div class="col-md-6 form-group">
+            <input type="file" name="file" id="file" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Xử lý</button>
+        </div>
+    </div>
+}
+
+@if (ViewBag.Message == "File uploaded successfully")
+{
+    <div class="row">
+        <div id="div_alert" class="col-md-2 alert alert-success">
+            <strong>Xử lý file thành công!</strong>
+        </div>
+        <div id="btn_saveStudentSheet" class="col-md-6">
+            <button class="btn btn-success btn_SaveStudentExcelSheet"> Lưu danh sách này </button>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+}
+
+@if (ViewBag.NotExistStudentClassNames != null)
+{
+    <div id="modal-form" class="modal show">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <strong>Những lớp sinh viên sau chưa tồn tại trong hệ thống! Xin hãy kiểm tra và cập nhật lại file Excel Sheet hoặc tạo lớp sinh viên mới</strong>
+                </div>
+                <div class="modal-body">
+                    <ol>
+                        @foreach (string item in ViewBag.NotExistStudentClassNames)
+                        {
+                            <li>@item</li>
+                        }
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn_CloseModel" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (ViewBag.Message == "File uploaded successfully" || ViewBag.Message == "Lưu thành công")
+{
+
+    @(Html.Kendo().Grid<StudentViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Id).Hidden(true);
+          columns.Bound(c => c.UserName).Title("Mã sinh viên");
+          columns.Bound(c => c.FullName);
+          columns.Bound(c => c.ClassName);
+          columns.Bound(c => c.Cpa);
+          columns.Bound(c => c.Phone);
+          columns.Bound(c => c.BirthDate);
+          columns.Bound(c => c.Address);
+      })
+      .Editable(editable => editable.Mode(GridEditMode.InCell))
+      .Pageable()
+      .Sortable(sortable => { sortable.SortMode(GridSortMode.SingleColumn); })
+      .Filterable(filterable => filterable.Mode(GridFilterMode.Row))
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("StudentSheet_Read", "Student"))
+      )
+      .Scrollable(a => a.Height("auto"))
+      )
+
+}
+
+
+<script type="text/javascript">
+
+    $(".btn_SaveStudentExcelSheet").click(function () {
+        var grid = $("#grid").data("kendoGrid");
+
+        // Get the dataSource of the Grid
+        var dataSource = grid.dataSource;
+
+        // Parse the data of the dataSource to JSON format
+        var rows = JSON.stringify({ 'rows': dataSource.data().toJSON() });
+
+        // Building and execution the Ajax request
+        $.ajax({
+            url: "SaveStudentExcelSheet",
+            data: rows,
+            dataType: "json",
+            type: "POST",
+            contentType: 'application/json;',
+            success: function (dataResponse) {
+                var result = dataResponse['result'];
+
+                if (result == 'success') {
+                    $("#div_alert").html("<strong>Lưu thành công!</strong>");
+                    setTimeout(function () { $("#div_alert").hide(); }, 5000);
+                    $("#btn_saveStudentSheet").remove();
+                }
+                else {
+                    $("#div_alert").html("<strong>Có lỗi xảy ra!</strong>");
+                    $("#btn_saveStudentSheet").prop('disabled', true);
+                }
+
+            }
+        });
+    });
+
+    $(".btn_CloseModel").click(function (e) {
+        //$('#modal-form').modal('hide');
+        $('#modal-form').addClass("hide");
+        $('#modal-form').removeClass("show");
+        e.stopPropagation();
+    });
+
+</script>

@@ -34,7 +34,9 @@
               command.Destroy();
           }).Width(180);
       })
-      .ToolBar(toolbar => { toolbar.Create(); })
+      .ToolBar(toolbar => { toolbar.Create(); toolbar.Custom()
+                     .Text("Nhập danh sách sinh viên bằng file Excel Sheet")
+                     .Action("AddStudentsByExcelSheet", "Student"); })
       .Editable(editable => editable.Mode(GridEditMode.InLine))
       .Pageable()
       .Sortable(sortable => { sortable.SortMode(GridSortMode.SingleColumn); })

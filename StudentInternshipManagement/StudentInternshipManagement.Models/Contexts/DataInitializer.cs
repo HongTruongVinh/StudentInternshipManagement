@@ -30,7 +30,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user = new ApplicationUser
             {
                 UserName = "20521070",
-                Email = "20521070@yopmail.com",
+                Email = "20521070@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Trần Văn Đức",
                 Address = "MK",
@@ -48,7 +48,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user2 = new ApplicationUser
             {
                 UserName = "20520325",
-                Email = "20520325@yopmail.com",
+                Email = "20520325@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Cao Thị Ngân",
                 Address = "MK",
@@ -66,7 +66,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user3 = new ApplicationUser
             {
                 UserName = "20524713",
-                Email = "20524713@yopmail.com",
+                Email = "20524713@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Trần Danh Hoàn",
                 Address = "MK",
@@ -84,7 +84,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user4 = new ApplicationUser
             {
                 UserName = "20523847",
-                Email = "20523847@yopmail.com",
+                Email = "20523847@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Trần Đức Mạnh",
                 Address = "MK",
@@ -102,7 +102,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user5 = new ApplicationUser
             {
                 UserName = "20522820",
-                Email = "20522820@yopmail.com",
+                Email = "20522820@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Hà Văn Hoàn",
                 Address = "MK",
@@ -120,7 +120,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user6 = new ApplicationUser
             {
                 UserName = "20522231",
-                Email = "20522231@yopmail.com",
+                Email = "20522231@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Phạm Anh Tân",
                 Address = "MK",
@@ -138,7 +138,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user7 = new ApplicationUser
             {
                 UserName = "20520707",
-                Email = "20520707@yopmail.com",
+                Email = "20520707@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Triệu Văn Dũng",
                 Address = "MK",
@@ -156,7 +156,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user8 = new ApplicationUser
             {
                 UserName = "20522558",
-                Email = "20522558@yopmail.com",
+                Email = "20522558@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Mai Thị Giang",
                 Address = "MK",
@@ -174,7 +174,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user9 = new ApplicationUser
             {
                 UserName = "20524579",
-                Email = "20524579@yopmail.com",
+                Email = "20524579@gm.uit.edu.vn",
                 Avatar = "DefaultAvatarStudent.png",
                 FullName = "Nguyễn Thúc Huynh",
                 Address = "MK",
@@ -192,7 +192,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user10 = new ApplicationUser
             {
                 UserName = "TrungLD",
-                Email = "TrungLD@yopmail.com",
+                Email = "TrungLD@gm.uit.edu.vn",
                 Avatar = "TrungLD.png",
                 FullName = "Lê Đức Trung",
                 Address = "MK",
@@ -211,7 +211,7 @@ namespace StudentInternshipManagement.Models.Contexts
             var user12 = new ApplicationUser
             {
                 UserName = "Admin",
-                Email = "Admin@yopmail.com",
+                Email = "Admin@gm.uit.edu.vn",
                 Avatar = "Admin.png",
                 FullName = "Admin 1",
                 Address = "MK",
