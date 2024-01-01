@@ -22,17 +22,20 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="row">
-        <div class="col-md-2">
-            <label for="file">Nhập Excel File:</label>
-        </div>
-        <div class="col-md-6 form-group">
-            <input type="file" name="file" id="file" class="form-control" />
-        </div>
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-success">Xử lý</button>
-        </div>
+<div class="row">
+    <div class="col-md-2">
+        <label for="file">Nhập Excel File:</label>
     </div>
+    <div class="col-md-6 form-group">
+        <input type="file" name="file" id="file" class="form-control" />
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-success">Xử lý</button>
+    </div>
+    <div class="col-md-2">
+        <a href="@Url.Action("DownloadTemplateStudentSheet", "Student")" class="btn btn-success" role="button">Tải mẫu Exel Sheet</a>
+    </div>
+</div>
 }
 
 @if (ViewBag.Message == "File uploaded successfully")
