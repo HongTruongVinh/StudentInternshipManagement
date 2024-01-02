@@ -27,7 +27,7 @@ namespace StudentInternshipManagement.Web.Controllers
         
         public BaseController()
         {
-            //var init = new DataInitializer(new WebContext());
+            //var initial = new DataInitializer(new WebContext()); // Dòng lệnh chạy seed
 
             //if(UnityConfig.Container.IsRegistered<DashboardOptions>())
 
@@ -37,6 +37,11 @@ namespace StudentInternshipManagement.Web.Controllers
             }, new SingletonLifetimeManager());
 
             _userService = UnityConfig.Container.Resolve<IUserService>();
+
+            //if(_userService.GetAll().Count() == 0)
+            //{
+            //    var initial = new DataInitializer(new WebContext()); // nếu trong database chưa có dữ liệu trong bảng user nào thì chạy seed 
+            //}
 
         }
 

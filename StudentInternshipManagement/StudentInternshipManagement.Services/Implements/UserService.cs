@@ -166,17 +166,34 @@ namespace StudentInternshipManagement.Services.Implements
 
         public SignInStatus LogIn(LoginViewModel model)
         {
+            SignInStatus result;
+
             ApplicationUser signedUser = _userManager.FindByEmail(model.Email);
-            SignInStatus result =
+
+            if (signedUser == null)
+            {
+                result = SignInStatus.Failure;
+                return result;
+            }
+
+            result =
                 _signInManager.PasswordSignIn(signedUser.UserName, model.Password, model.RememberMe, false);
             return result;
         }
 
         public async Task<SignInStatus> LogInAsync(LoginViewModel model)
         {
+            SignInStatus result;
+
             ApplicationUser user = await _userManager.FindByEmailAsync(model.Email);
 
-            SignInStatus result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false); ;
+            if (user == null)
+            {
+                result = SignInStatus.Failure;
+                return result;
+            }
+
+            result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false); ;
 
             return result;
         }
