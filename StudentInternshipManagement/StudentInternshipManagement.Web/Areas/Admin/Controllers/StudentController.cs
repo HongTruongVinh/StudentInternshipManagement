@@ -284,9 +284,16 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
 
         public FileResult DownloadTemplateStudentSheet()
         {
-            byte[] fileBytes = System.IO.File.ReadAllBytes(Server.MapPath("/Data/Excel/TemplateStudentSheet.xlsx"));
-            string fileName = "TemplateStudentSheet.xlsx";
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+            try
+            {
+                byte[] fileBytes = System.IO.File.ReadAllBytes(Server.MapPath("/Data/Excel/TemplateStudentSheet.xlsx"));
+                string fileName = "TemplateStudentSheet.xlsx";
+                return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

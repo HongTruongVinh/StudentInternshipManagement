@@ -130,5 +130,23 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
 
             return Json(result);
         }
+
+        /// <summary>
+        /// Hàm này phục vụ cho View Grade 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GetAllLearningClasses(int SemesterId)
+        {
+            var result = _learningClassService.GetAll().Where(x=>x.SemesterId == SemesterId).Select(x => new
+            {
+                LearningClassId = x.Id,
+                ClassName = x.ClassName,
+                SemesterId = x.SemesterId,
+                x.SubjectId,
+                x.Subject.SubjectName,
+            });
+            
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }

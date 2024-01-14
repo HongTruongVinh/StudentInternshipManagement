@@ -1,0 +1,71 @@
+﻿@using Kendo.Mvc.UI
+@using StudentInternshipManagement.Models.Entities
+@using StudentInternshipManagement.Services.ViewModel
+@model StudentInternshipManagement.Services.ViewModel.GradeViewModel
+
+@{
+    ViewBag.Title = "Kết quả thực tập";
+    ViewBag.Category = "Quản lý";
+    ViewBag.Section = "Kết quả thực tập";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+
+}
+
+@section Kendo
+{
+    @Styles.Render("~/Content/kendo/styles")
+    @Scripts.Render("~/Scripts/kendo/scripts")
+}
+
+<div class="row">
+    <div class="col-lg-2">
+        <label>Học kỳ </label>
+    </div>
+    <div class="col-lg-10">
+        <label class="col-lg-2">@Model.SemesterId </label>
+        <label class="col-lg-2">Bắt đầu : @Model.StartDate.ToString("dd-MM-yyyy") </label>
+        <label class="col-lg-2">Kết thúc : @Model.EndDate.ToString("dd-MM-yyyy") </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-2">
+        <label>Môn </label>
+    </div>
+    <div class="col-lg-6">
+        <label>@Model.SubjectName </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-2">
+        <label>Lớp </label>
+    </div>
+    <div class="col-lg-6">
+        <label>@Model.ClassName </label>
+    </div>
+</div>
+
+@(Html.Kendo().Grid<LearningClassStudentViewModel>()
+      .Name("grid") // template expression, to be evaluated in the master context
+      .Columns(columns =>
+      {
+          columns.Bound(o => o.StudentCode);
+          columns.Bound(o => o.FullName);
+          columns.Bound(o => o.StudentClassName);
+          columns.Bound(o => o.MidTermPoint);
+          columns.Bound(o => o.EndTermPoint);
+          columns.Bound(o => o.TotalPoint);
+      })
+      .DataSource(dataSource => dataSource
+              .Ajax()
+              .PageSize(10)
+              .Read(read => read.Action("FilteredGrade_Read", "Internship"))
+        )
+      .Pageable()
+      .Sortable()
+      .ToolBar(toolbar => { toolbar.Excel(); })
+    .Sortable(sortable => { sortable.SortMode(GridSortMode.SingleColumn); })
+    .Filterable(filterable => filterable.Mode(GridFilterMode.Row))
+    .Scrollable(scr => scr.Height(310)))

@@ -1,5 +1,8 @@
 ﻿@using Kendo.Mvc.UI
+@using StudentInternshipManagement.Models.Entities
 @using StudentInternshipManagement.Services.ViewModel
+@model StudentInternshipManagement.Services.ViewModel.GradeViewModel
+
 @{
     ViewBag.Title = "Kết quả thực tập";
     ViewBag.Category = "Quản lý";
@@ -13,5 +16,223 @@
     @Scripts.Render("~/Scripts/kendo/scripts")
 }
 
-<h2>Grade</h2>
+<div class="row">
+    <div class="col-md-4">
+        <label class="col-md-3 control-label no-padding-right" for="form-field-1"> Chọn học kỳ </label>
 
+        <div class="col-md-9">
+            @(Html.Kendo().DropDownListFor(m => m.SemesterId)
+                .HtmlAttributes(new {style = "width: 70%"})
+                .AutoBind(false)
+                .OptionLabel("Chọn học kỳ...")
+                .DataTextField("SemesterId")
+                .DataValueField("SemesterId")
+                .DataSource(dataSource =>
+                {
+                    dataSource.Read(read => read.Action("GetAllSemesters", "Internship"))
+                        .ServerFiltering(true);
+                })
+                )
+        </div>
+        @Html.ValidationMessageFor(m => m.SemesterId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-8">
+        <div class="col-lg-4">
+            <label>Học kỳ: <span class="bolder" id="semesterId"></span></label>
+        </div>
+        <div class="col-lg-4">
+            <label>Bắt đầu : <span class="bolder" id="startDate"></span> </label>
+            <label>Kết thúc : <span class="bolder" id="endDate"></span> </label>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Chọn lớp học </label>
+
+        <div class="col-sm-9">
+            @(Html.Kendo().DropDownListFor(m => m.LearningClassId)
+                .HtmlAttributes(new {style = "width: 70%"})
+                .AutoBind(false)
+                .OptionLabel("Chọn lớp học...")
+                .DataTextField("ClassName")
+                .DataValueField("LearningClassId")
+                .DataSource(dataSource =>
+                {
+                    dataSource.Read(read => read.Action("GetAllLearningClasses", "LearningClass").Data("filterLearningClass"))
+                        .ServerFiltering(true);
+                })
+                .CascadeFrom("SemesterId")
+                )
+        </div>
+        @Html.ValidationMessageFor(m => m.LearningClassId, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-8">
+        <div class="col-lg-4">
+            <label>Môn: <span class="bolder" id="subjectName"></span></label>
+        </div>
+        <div class="col-lg-4">
+            <label>Lớp: <span class="bolder" id="learningClassName"></span></label>
+        </div>
+    </div>
+</div>
+
+@(Html.Kendo().Grid<LearningClassStudentViewModel>()
+      .Name("LearningClassStudent_Grid") // template expression, to be evaluated in the master context
+      .Columns(columns =>
+      {
+          columns.Bound(o => o.StudentCode);
+          columns.Bound(o => o.FullName);
+          columns.Bound(o => o.StudentClassName);
+          columns.Bound(o => o.MidTermPoint);
+          columns.Bound(o => o.EndTermPoint);
+          columns.Bound(o => o.TotalPoint);
+      })
+      .DataSource(dataSource => dataSource
+              .Ajax()
+              .PageSize(10)
+              .Read(read => read.Action("FilteredGrade_Read", "Internship"))
+        )
+      .Pageable()
+      .Sortable()
+      .ToolBar(toolbar => { toolbar.Excel(); })
+    .Sortable(sortable => { sortable.SortMode(GridSortMode.SingleColumn); })
+    .Filterable(filterable => filterable.Mode(GridFilterMode.Row))
+    .Scrollable(scr => scr.Height(310)))
+
+<script type="text/javascript">
+    function filterLearningClass() {
+        return {
+            SemesterId: $("#SemesterId").data("kendoDropDownList").value()
+        };
+    }
+
+    $(document).ready(function () {
+        // Bắt sự kiện change của dropdown
+        $("#LearningClassId").change(function () {
+            // Lấy giá trị của dropdown được chọn
+            var selectedValue = $(this).val(); // learningClassId
+
+            // Thực hiện hàm nào đó dựa trên giá trị
+            handleDropdownChange(selectedValue);
+        });
+
+        // Hàm xử lý khi dropdown thay đổi giá trị
+        function handleDropdownChange(selectedValue) {
+            // Cập nhật nội dung hiển thị
+            $("#selectedOption").text(selectedValue ? "Option " + selectedValue : "None");
+
+            var semesterId = $("#SemesterId").val();
+            
+            var da = $.ajax({
+                    async: false,
+                    type: "Post", //phải để Post mới nhận được datarespone
+                    global: false,
+                    dataType: 'json',
+                    url: '@Url.Action("GradeFiltering", "Internship")',
+                    data: {
+                            'learningClassId': selectedValue,
+                            'semesterId': semesterId,
+                          },
+                    success: function (dataResponse)
+                    {
+                        var result = dataResponse['status'];
+                        if (result == true) {
+                            $('#LearningClassStudent_Grid').data('kendoGrid').dataSource.read();//reload grid
+                            $('#semesterId').text(dataResponse['semesterId']);
+                            $('#startDate').text(dataResponse['startDate']);
+                            $('#endDate').text(dataResponse['endDate']);
+                            $('#subjectName').text(dataResponse['subjectName']);
+                            $('#learningClassName').text(dataResponse['className']);
+                        }
+                        else {
+                            
+                        }
+
+                    }
+                });
+        }
+    });
+
+</script>
+
+
+@*@using (Html.BeginForm("FilteredGrade", "Internship", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <div class="form-group">
+
+        </div>
+
+        <div class="form-group">
+
+        </div>
+
+
+        <div class="clearfix form-actions">
+            <div class="col-md-offset-3 col-md-9">
+                <button class="btn btn-info" type="submit">
+                    <i class="ace-icon fa fa-check bigger-110"></i>
+                    Lọc kết quả
+                </button>
+
+                &nbsp; &nbsp; &nbsp;
+                <button class="btn" type="reset">
+                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                    Reset
+                </button>
+            </div>
+        </div>
+
+        <div class="hr hr-24"></div>
+    }*@
+
+
+
+@*@using (Ajax.BeginForm("FilteredGrade", "Internship", new AjaxOptions { UpdateTargetId = "Productresult", OnComplete = @OnComplete }))
+    {
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Chọn học kỳ </label>
+
+            <div class="col-sm-9">
+                @(Html.Kendo().DropDownListFor(m => m.SemesterId)
+              .HtmlAttributes(new {style = "width: 41.66666667%"})
+              .AutoBind(false)
+              .OptionLabel("Chọn học kỳ...")
+              .DataTextField("SemesterId")
+              .DataValueField("SemesterId")
+              .DataSource(dataSource =>
+              {
+                  dataSource.Read(read => read.Action("GetAllSemesters", "Internship"))
+                      .ServerFiltering(true);
+              })
+              )
+            </div>
+            @Html.ValidationMessageFor(m => m.SemesterId, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Chọn lớp học </label>
+
+            <div class="col-sm-9">
+                @(Html.Kendo().DropDownListFor(m => m.LearningClassId)
+            .Name("2")
+              .HtmlAttributes(new {style = "width: 41.66666667%"})
+              .AutoBind(false)
+              .OptionLabel("Chọn lớp học...")
+              .DataTextField("ClassName")
+              .DataValueField("LearningClassId")
+              .DataSource(dataSource =>
+              {
+                  dataSource.Read(read => read.Action("GetAllLearningClasses", "LearningClass").Data("filterLearningClass"))
+                      .ServerFiltering(true);
+              })
+              .CascadeFrom("SemesterId")
+              )
+            </div>
+            @Html.ValidationMessageFor(m => m.LearningClassId, "", new { @class = "text-danger" })
+        </div>
+
+        <div><input type="submit" value="Lọc kết quả" /></div>
+    }*@

@@ -111,7 +111,9 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CompanyTrainingMajorViewModel.cs" />
     <Compile Include="ViewModel\CompanyViewModel.cs" />
+    <Compile Include="ViewModel\GradeViewModel.cs" />
     <Compile Include="ViewModel\InternshipViewModel.cs" />
+    <Compile Include="ViewModel\LeaningClassStudentChartViewModel.cs" />
     <Compile Include="ViewModel\LearningClassStudentViewModel.cs" />
     <Compile Include="ViewModel\StudentViewModel.cs" />
     <Compile Include="ViewModel\SubjectViewModel.cs" />

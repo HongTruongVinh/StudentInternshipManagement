@@ -325,6 +325,7 @@
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Admin\Controllers\SemesterController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StatisticController.cs" />
     <Compile Include="Areas\Admin\Controllers\StudentClassController.cs" />
     <Compile Include="Areas\Admin\Controllers\StudentController.cs" />
     <Compile Include="Areas\Admin\Controllers\SubjectController.cs" />
@@ -2587,6 +2588,8 @@
     <Content Include="Areas\Student\Views\LearningClass\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Student\AddStudentsByExcelSheet.cshtml" />
     <Content Include="Data\Excel\TemplateStudentSheet.xlsx" />
+    <Content Include="Areas\Admin\Views\Internship\FilteredGrade.cshtml" />
+    <Content Include="Areas\Admin\Views\Statistic\Index.cshtml" />
     <None Include="Scripts\kendo\2019.1.115\kendo.all-vsdoc.js" />
     <None Include="Scripts\kendo\2019.1.115\kendo.all.min.intellisense.js" />
     <Content Include="Scripts\kendo\2019.1.115\kendo.all.min.js" />

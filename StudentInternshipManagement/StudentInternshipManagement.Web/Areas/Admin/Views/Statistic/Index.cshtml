@@ -1,0 +1,152 @@
+﻿@using Kendo.Mvc.UI
+@using StudentInternshipManagement.Models.Entities
+@using StudentInternshipManagement.Services.ViewModel
+@model StudentInternshipManagement.Services.ViewModel.GradeViewModel
+
+@{
+    ViewBag.Title = "Trang thống kê";
+    ViewBag.Category = "Thống kê";
+    ViewBag.Section = "Kết quả thực tập";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Kendo
+{
+    @Styles.Render("~/Content/kendo/styles")
+    @Scripts.Render("~/Scripts/kendo/scripts")
+}
+
+<div id="example">
+    <div class="demo-section wide">
+        <div id="chart" style="background: center no-repeat url('../content/shared/styles/world-map.png');"></div>
+    </div>
+
+</div>
+
+<div style="text-align: center">
+    <canvas id="barcanvas"></canvas>
+</div>
+<div style="text-align: center">
+    Disclaimer:- This data is for demo it is
+    not real data it wont relate to any company
+</div>
+
+<script>
+
+    function createChart() {
+        debugger;
+
+        $("#chart").kendoChart({
+            title: {
+                position: "bottom",
+                text: "Share of Internet Population Growth, 2007 - 2012"
+            },
+            legend: {
+                visible: false
+            },
+            chartArea: {
+                background: ""
+            },
+            seriesDefaults: {
+                labels: {
+                    visible: true,
+                    background: "transparent",
+                    template: "#= category #: \n #= value#%"
+                }
+            },
+            data: barChartData,
+            series: [{
+                type: "pie",
+                startAngle: 150,
+                data: [{
+                    category: "Asia",
+                    value: 53.8,
+                    color: "#9de219"
+                },{
+                    category: "Europe",
+                    value: 16.1,
+                    color: "#90cc38"
+                },{
+                    category: "Latin America",
+                    value: 11.3,
+                    color: "#068c35"
+                },{
+                    category: "Africa",
+                    value: 9.6,
+                    color: "#006634"
+                },{
+                    category: "Middle East",
+                    value: 5.2,
+                    color: "#004d38"
+                },{
+                    category: "North America",
+                    value: 3.6,
+                    color: "#033939"
+                }]
+            }],
+            tooltip: {
+                visible: true,
+                format: "{0}%"
+            }
+        });
+    }
+
+    $(document).ready(createChart);
+    $(document).bind("kendo:skinChange", createChart);
+
+    var DataFromController  =
+        {
+            labels: [@Html.Raw(ViewBag.ObjectName)], //the names displayed on the x-axis, see images below
+            datasets: [{
+                label: 'ProductWise Sales Count',
+                backgroundColor: [
+                    "#f990a7",
+                    "#aad2ed",
+                    "#9966FF",
+                    "#99e5e5",
+                    "#f7bd83",
+                ],
+                borderWidth: 2,
+                data: [@ViewBag.Data]  //what you returned back from controller. values displayed on the y-axis, see images below
+            }]
+    };
+    
+    var barChartData =
+        {
+            labels: [@Html.Raw(ViewBag.ObjectName)], //the names displayed on the x-axis, see images below
+            datasets: [{
+                label: 'ProductWise Sales Count',
+                backgroundColor: [
+                    "#f990a7",
+                    "#aad2ed",
+                    "#9966FF",
+                    "#99e5e5",
+                    "#f7bd83",
+                ],
+                borderWidth: 2,
+                data: [@ViewBag.Data]  //what you returned back from controller. values displayed on the y-axis, see images below
+            }]
+    };
+
+    window.onload = function () {
+            var ctx1 = document.getElementById("barcanvas").getContext("2d");
+            window.myBar = new Chart(ctx1,
+                {
+                    type: 'bar',
+                    data: barChartData,
+                    options:
+                        {
+                            title:
+                            {
+                                display: true,
+                                text: "ProductWise Sales Count"
+                            },
+                            responsive: true,
+                            maintainAspectRatio: true
+                        }
+                });
+        }
+
+</script>
+
+

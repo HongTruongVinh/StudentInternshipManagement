@@ -6,12 +6,15 @@ using Hangfire;
 using Hangfire.Storage;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Microsoft.Ajax.Utilities;
 using StudentInternshipManagement.Models.Entities;
 using StudentInternshipManagement.Services.Implements;
+using StudentInternshipManagement.Services.ViewModel;
 using StudentInternshipManagement.Web.Controllers;
 
 namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class InternshipController : AdminBaseController
     {
         private static int _semester = -1;
@@ -20,13 +23,15 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
         private readonly IGroupService _groupService;
         private readonly IInternshipService _internshipService;
         private readonly ISemesterService _semesterService;
+        private readonly ILearningClassService _learningClassService;
 
         public InternshipController(IInternshipService internshipService, IGroupService groupService,
-            ISemesterService semesterService)
+            ISemesterService semesterService, ILearningClassService learningClassService)
         {
             _internshipService = internshipService;
             _groupService = groupService;
             _semesterService = semesterService;
+            _learningClassService = learningClassService;
         }
 
         public ActionResult Index()
@@ -89,29 +94,6 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
         {
             IQueryable<Internship> internships = _internshipService.GetByLatestSemester();
 
-            //var x = internships.ToList();
-            //var internship1 = x.FirstOrDefault();
-
-            //var x1 = internship1.Id;
-            //var x2 = internship1.Class.SemesterId;
-            //var x3 = internship1.RegistrationDate;
-            //var x4 = internship1.Status;
-            //var x5 = internship1.Student.User.FullName;
-            //var x6 = internship1.Class.ClassName;
-            //var x7 = internship1.Major.Company.CompanyName;
-            //var x8 = internship1.Major.TrainingMajor.TrainingMajorName;
-            //var x9 = internship1.Student.LearningClassStudents.FirstOrDefault(l => l.ClassId == internship1.ClassId)
-            //    ?.MidTermPoint;
-            //var x10 = internship1.Student.LearningClassStudents.FirstOrDefault(l => l.ClassId == internship1.ClassId)
-            //    ?.EndTermPoint;
-            //var x11 = internship1.Student.LearningClassStudents.FirstOrDefault(l => l.ClassId == internship1.ClassId)
-            //    ?.TotalPoint;
-            //var x12 = _groupService.GetByInternship(internship1)?.GroupName;
-
-            //var x13_1 = _groupService.GetByInternship(internship1);
-
-            //var x13 = x13_1?.Teacher.User.FullName;
-
             DataSourceResult result = internships.ToDataSourceResult(request, internship => new
             {
                 internship.Id,
@@ -137,9 +119,69 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
 
         public ActionResult Grade()
         {
-            
-
             return View();
+        }
+
+        static GradeViewModel _gradeViewModel;
+
+        [HttpPost]
+        public ActionResult GradeFiltering(int semesterId, int learningClassId)
+        {
+            _gradeViewModel = new GradeViewModel() { SemesterId = semesterId, LearningClassId = learningClassId };
+
+            var semester = _semesterService.GetById(semesterId);
+            var learningClass = _learningClassService.GetById(learningClassId);
+            var subject = learningClass.Subject;
+
+            _gradeViewModel.StartDate = semester.StartDate;
+            _gradeViewModel.EndDate = semester.EndDate;
+            _gradeViewModel.SubjectName = subject.SubjectName;
+            _gradeViewModel.ClassName = learningClass.ClassName;
+
+            return Json(new 
+            { 
+                status = true,
+                semesterId = semesterId,
+                startDate = semester.StartDate.ToString("dd-MM-yyyy"),
+                endDate = semester.EndDate.ToString("dd-MM-yyyy"),
+                subjectName = subject.SubjectName,
+                className = learningClass.ClassName,
+            });
+        }
+
+        
+        public ActionResult FilteredGrade_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            if(_gradeViewModel == null || _gradeViewModel.LearningClassId == 0) { _gradeViewModel = new GradeViewModel() { LearningClassId = 1 }; }
+            var learningClass = LearningClassStudentViewModel.convertEntitiesToListViewModel(
+                    _learningClassService.GetById(_gradeViewModel.LearningClassId).LearningClassStudents.ToList());
+
+            DataSourceResult result = learningClass.ToDataSourceResult(request, student => new
+            {
+                student.StudentId,
+                student.ClassId,
+                student.StudentCode,
+                student.StudentClassName,
+                student.FullName,
+                student.ClassName,
+                student.MidTermPoint,
+                student.EndTermPoint,
+                student.TotalPoint
+            });
+
+            return Json(result);
+        }
+
+        public ActionResult GetAllSemesters()
+        {
+            var result = _semesterService.GetAll().Select(x => new 
+            { 
+                SemesterId = x.Id,
+                x.StartDate,
+                x.EndDate,
+            });
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -149,5 +191,34 @@ namespace StudentInternshipManagement.Web.Areas.Admin.Controllers
 
             return File(fileContents, contentType, fileName);
         }
+
+        /// <summary>
+        /// Action này sẽ trả về View lọc kết quả tìm kiếm nhưng tạm thời không cần nữa 
+        /// </summary>
+        /// <param name="gradeViewModel"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult FilteredGrade(GradeViewModel gradeViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var semester = _semesterService.GetById(gradeViewModel.SemesterId);
+                var learningClass = _learningClassService.GetById(gradeViewModel.LearningClassId);
+                var subject = learningClass.Subject;
+
+                gradeViewModel.StartDate = semester.StartDate;
+                gradeViewModel.EndDate = semester.EndDate;
+                gradeViewModel.SubjectName = subject.SubjectName;
+                gradeViewModel.ClassName = learningClass.ClassName;
+
+                _gradeViewModel = gradeViewModel;
+
+                return View(gradeViewModel);
+            }
+
+            return null;
+        }
+
+
     }
 }

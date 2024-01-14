@@ -46,6 +46,9 @@ namespace StudentInternshipManagement.Services.ViewModel
         [DisplayName("Lớp")]
         public string ClassName { get; set; }
 
+        [DisplayName("Lớp sinh viên")]
+        public string StudentClassName { get; set; }
+
         public LearningClassStudentViewModel() { }
 
         public LearningClassStudentViewModel(LearningClassStudent entity)
@@ -58,6 +61,7 @@ namespace StudentInternshipManagement.Services.ViewModel
             EndTermPoint = entity.EndTermPoint;
             TotalPoint = entity.TotalPoint;
             ClassName = entity.Class.ClassName;
+            StudentClassName = entity.Student.Class.ClassName;
 
             Id = entity.Id;
             UpdatedAt = entity.UpdatedAt;
