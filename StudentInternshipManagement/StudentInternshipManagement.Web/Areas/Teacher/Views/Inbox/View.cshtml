@@ -109,7 +109,7 @@
                     </a>
 
                     <span class="action-buttons">
-                        <a href="#">
+                        <a href="@Url.Action("DownloadAttachedFile", "Inbox", new {senderEmail = Model.Sender.Email, fileName = Model.File})">
                             <i class="ace-icon fa fa-download bigger-125 blue"></i>
                         </a>
 

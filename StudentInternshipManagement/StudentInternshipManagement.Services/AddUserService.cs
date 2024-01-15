@@ -39,7 +39,7 @@ namespace StudentInternshipManagement.Services
                 {
 
                     UserName = v.UserName,
-                    Email = v.UserName + "@gm.uit.edu.com",
+                    Email = v.UserName + "@gm.uit.edu.vn",
                     Avatar = "DefaultAvatarTeacher.png",
                     FullName = v.FullName,
                     Address = v.Address,
@@ -101,7 +101,7 @@ namespace StudentInternshipManagement.Services
                 var user = new ApplicationUser
                 {
                     UserName = v.UserName,
-                    Email = v.UserName + "@gm.uit.edu.com",
+                    Email = v.UserName + "@gm.uit.edu.vn",
                     Avatar = "DefaultAvatarStudent.png",
                     FullName = v.FullName,
                     Address = v.Address,
@@ -165,7 +165,7 @@ namespace StudentInternshipManagement.Services
                 var user = new ApplicationUser
                 {
                     UserName = v.UserName,
-                    Email = v.UserName + "@gm.uit.edu.com",
+                    Email = v.UserName + "@gm.uit.edu.vn",
                     Avatar = "DefaultAvatarStudent.png",
                     FullName = v.FullName,
                     Address = v.Address,

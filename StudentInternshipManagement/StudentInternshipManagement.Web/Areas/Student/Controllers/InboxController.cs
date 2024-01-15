@@ -118,5 +118,22 @@ namespace StudentInternshipManagement.Web.Areas.Student.Controllers
             }
             return View(message);
         }
+
+        public FileResult DownloadAttachedFile(string senderEmail, string fileName)
+        {
+            try
+            {
+                string senderId = senderEmail.Split('@')[0];
+
+                byte[] fileBytes = System.IO.File.ReadAllBytes(Server.MapPath($"~/Attachment/{senderId}/{fileName}"));
+
+                return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
     }
 }
