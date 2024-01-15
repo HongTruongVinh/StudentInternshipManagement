@@ -16,136 +16,252 @@
     @Scripts.Render("~/Scripts/kendo/scripts")
 }
 
-<div id="example">
-    <div class="demo-section wide">
-        <div id="chart" style="background: center no-repeat url('../content/shared/styles/world-map.png');"></div>
+<div class="row">
+    <div class="col-md-4">
+        <label class="col-md-3 control-label no-padding-right" for="form-field-1"> Chọn học kỳ </label>
+
+        <div class="col-md-9">
+            @(Html.Kendo().DropDownListFor(m => m.SemesterId)
+        .HtmlAttributes(new {style = "width: 70%"})
+        .AutoBind(false)
+        .OptionLabel("Chọn học kỳ...")
+        .DataTextField("SemesterId")
+        .DataValueField("SemesterId")
+        .DataSource(dataSource =>
+        {
+            dataSource.Read(read => read.Action("GetAllSemesters", "Internship"))
+                .ServerFiltering(true);
+        })
+        )
+        </div>
+        @Html.ValidationMessageFor(m => m.SemesterId, "", new { @class = "text-danger" })
     </div>
-
 </div>
 
-<div style="text-align: center">
-    <canvas id="barcanvas"></canvas>
+<div id="chartSection" class="row">
+    <div id="barChartDiv" class="col-md-6">
+        <div id="barChart"></div>
+    </div>
+    <div id="pieChartDiv" class="col-md-6">
+        <div id="pieChart"></div>
+    </div>
 </div>
-<div style="text-align: center">
-    Disclaimer:- This data is for demo it is
-    not real data it wont relate to any company
-</div>
+
+
+
 
 <script>
+    var originalBarChart = $('#barChart').attr('style');
+    var originalPieChart = $('#pieChart').attr('style');
 
     function createChart() {
-        debugger;
 
-        $("#chart").kendoChart({
-            title: {
-                position: "bottom",
-                text: "Share of Internet Population Growth, 2007 - 2012"
-            },
-            legend: {
-                visible: false
-            },
-            chartArea: {
-                background: ""
-            },
-            seriesDefaults: {
-                labels: {
-                    visible: true,
-                    background: "transparent",
-                    template: "#= category #: \n #= value#%"
+        var pieChartData;
+        var barChartData;
+
+        //ajax lấy dữ liệu để tạo biểu đồ từ controller
+        var semesterId = -1;
+        var da = $.ajax({
+            async: false,
+            type: "Post", //phải để Post mới nhận được datarespone
+            global: false,
+            dataType: 'json',
+            url: '@Url.Action("GetDataChart", "Statistic")',
+            data: {
+                'SemesterId': semesterId,
+                  },
+            success: function (dataResponse)
+            {
+                var result = dataResponse['status'];
+
+                if (result == true) {
+                    pieChartData = dataResponse['pieChartData'];
+                    barChartData = dataResponse['barChartData'];
+                    semesterId = dataResponse['semesterId'];
+
+                    $("#pieChart").kendoChart({
+                        title: {
+                            position: "bottom",
+                            text: "Biểu đồ điểm thi kì " + semesterId,
+                        },
+                        legend: {
+                            visible: false
+                        },
+                        chartArea: {
+                            background: ""
+                        },
+                        seriesDefaults: {
+                            labels: {
+                                visible: true,
+                                background: "transparent",
+                                template: "#= category #: \n #= value#%"
+                            }
+                        },
+                        series: [{
+                            type: "pie",
+                            startAngle: 90,
+                            data: pieChartData
+                        }],
+                        tooltip: {
+                            visible: true,
+                            format: "{0}%"
+                        }
+                    });
+
+
+                    var barChartValue = barChartData.map(function (element) { return element.value; });
+                    var barChartCategory = barChartData.map(function (element) { return element.category; });
+
+                    $("#barChart").kendoChart({
+                        title: {
+                            position: "bottom",
+                            text: "Biểu đồ điểm thi kì " + semesterId,
+                        },
+                        legend: {
+                            visible: false
+                        },
+                        series: [
+                            { data: barChartValue, axis: "bottom", color: "#27e3eb", }
+                        ],
+                        valueAxis: [
+                            { pane: "bottom-pane", name: "bottom", max: 50, }
+                        ],
+                        panes: [
+                            { name: "bottom-pane" }
+                        ],
+                        categoryAxis: [{
+                            categories: barChartCategory,
+                            pane: "bottom-pane",
+                            labels: {
+                                position: "start"
+                            },
+                        },],
+                        tooltip: {
+                            visible: true,
+                            template: "Số lượng: #= value #"
+                        }
+                    });
                 }
-            },
-            data: barChartData,
-            series: [{
-                type: "pie",
-                startAngle: 150,
-                data: [{
-                    category: "Asia",
-                    value: 53.8,
-                    color: "#9de219"
-                },{
-                    category: "Europe",
-                    value: 16.1,
-                    color: "#90cc38"
-                },{
-                    category: "Latin America",
-                    value: 11.3,
-                    color: "#068c35"
-                },{
-                    category: "Africa",
-                    value: 9.6,
-                    color: "#006634"
-                },{
-                    category: "Middle East",
-                    value: 5.2,
-                    color: "#004d38"
-                },{
-                    category: "North America",
-                    value: 3.6,
-                    color: "#033939"
-                }]
-            }],
-            tooltip: {
-                visible: true,
-                format: "{0}%"
+                else {
+                    alert("Hiện tại học kỳ này chưa có dữ liệu. Xin hãy quay lại sau!<br>");
+                }
+
             }
         });
+
     }
 
-    $(document).ready(createChart);
-    $(document).bind("kendo:skinChange", createChart);
+    $(document).ready(createChart());
+    $(document).bind("kendo:skinChange", createChart());
 
-    var DataFromController  =
-        {
-            labels: [@Html.Raw(ViewBag.ObjectName)], //the names displayed on the x-axis, see images below
-            datasets: [{
-                label: 'ProductWise Sales Count',
-                backgroundColor: [
-                    "#f990a7",
-                    "#aad2ed",
-                    "#9966FF",
-                    "#99e5e5",
-                    "#f7bd83",
-                ],
-                borderWidth: 2,
-                data: [@ViewBag.Data]  //what you returned back from controller. values displayed on the y-axis, see images below
-            }]
-    };
-    
-    var barChartData =
-        {
-            labels: [@Html.Raw(ViewBag.ObjectName)], //the names displayed on the x-axis, see images below
-            datasets: [{
-                label: 'ProductWise Sales Count',
-                backgroundColor: [
-                    "#f990a7",
-                    "#aad2ed",
-                    "#9966FF",
-                    "#99e5e5",
-                    "#f7bd83",
-                ],
-                borderWidth: 2,
-                data: [@ViewBag.Data]  //what you returned back from controller. values displayed on the y-axis, see images below
-            }]
-    };
 
-    window.onload = function () {
-            var ctx1 = document.getElementById("barcanvas").getContext("2d");
-            window.myBar = new Chart(ctx1,
+    //Mỗi khi người dùng chọn một mã học kỳ nào đó thì sẽ kích hoạt event này
+    $(document).ready(function () {
+    // Bắt sự kiện change của dropdown
+        $("#SemesterId").change(function () {
+
+            // thực hiện xóa biểu đồ cũ và tạo lại 
+            $("#barChart").remove();
+            $("#pieChart").remove();
+            $("#barChartDiv").empty();
+            $("#pieChartDiv").empty();
+
+            $("#barChartDiv").append('<div id="barChart"></div>');
+            $("#pieChartDiv").append('<div id="pieChart"></div>');
+
+            var semesterId = $(this).val();
+
+            var da = $.ajax({
+                async: false,
+                type: "Post", //phải để Post mới nhận được datarespone
+                global: false,
+                dataType: 'json',
+                url: '@Url.Action("GetDataChart", "Statistic")',
+                data: {
+                    'SemesterId': semesterId,
+                      },
+                success: function (dataResponse)
                 {
-                    type: 'bar',
-                    data: barChartData,
-                    options:
-                        {
-                            title:
-                            {
-                                display: true,
-                                text: "ProductWise Sales Count"
+                    var result = dataResponse['status'];
+
+                    if (result == true) {
+                        
+                        pieChartData = dataResponse['pieChartData'];
+                        barChartData = dataResponse['barChartData'];
+                        semesterId = dataResponse['semesterId'];
+
+                        $("#pieChart").kendoChart({
+                            title: {
+                                position: "bottom",
+                                text: "Biểu đồ điểm thi kì " + semesterId,
                             },
-                            responsive: true,
-                            maintainAspectRatio: true
-                        }
-                });
-        }
+                            legend: {
+                                visible: false
+                            },
+                            chartArea: {
+                                background: ""
+                            },
+                            seriesDefaults: {
+                                labels: {
+                                    visible: true,
+                                    background: "transparent",
+                                    template: "#= category #: \n #= value#%"
+                                }
+                            },
+                            series: [{
+                                type: "pie",
+                                startAngle: 90,
+                                data: pieChartData
+                            }],
+                            tooltip: {
+                                visible: true,
+                                format: "{0}%"
+                            }
+                        });
+
+
+                        var barChartValue = barChartData.map(function (element) { return element.value; });
+                        var barChartCategory = barChartData.map(function (element) { return element.category; });
+
+                        $("#barChart").kendoChart({
+                            title: {
+                                position: "bottom",
+                                text: "Biểu đồ điểm thi kì " + semesterId,
+                            },
+                            legend: {
+                                visible: false
+                            },
+                            series: [
+                                { data: barChartValue, axis: "bottom", color: "#27e3eb", }
+                            ],
+                            valueAxis: [
+                                { pane: "bottom-pane", name: "bottom", max: 50, }
+                            ],
+                            panes: [
+                                { name: "bottom-pane" }
+                            ],
+                            categoryAxis: [{
+                                categories: barChartCategory,
+                                pane: "bottom-pane",
+                                labels: {
+                                    position: "start"
+                                },
+                            },],
+                            tooltip: {
+                                visible: true,
+                                template: "Số lượng: #= value #"
+                            }
+                        });
+                    }
+                    else {
+                        alert("Hiện tại học kỳ này chưa có dữ liệu. Xin hãy quay lại sau!");
+                    }
+
+                }
+            });
+         });
+
+});
 
 </script>
 
